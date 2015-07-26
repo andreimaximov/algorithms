@@ -49,8 +49,11 @@ def test_case():
     distances = compute_distances(S, node_edges)
     print_distances(S, N, distances)
 
-T = int(sys.stdin.readline())
+def main():
+    T = int(sys.stdin.readline())
+    while (T > 0):
+        test_case()
+        T -= 1
 
-while (T > 0):
-    test_case()
-    T -= 1
+if __name__ == '__main__':
+    main()

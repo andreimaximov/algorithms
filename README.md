@@ -9,6 +9,7 @@ This is a collection of some of my [HackerRank](https://www.hackerrank.com) chal
     * [Fibonacci Modified](/algorithms/dynamic-programming/fibonacci-modified)
   - [Graph Theory](/algorithms/graph-theory)
     * [BFS: Shortest Reach](/algorithms/graph-theory/bfs-shortest-reach)
+    * [Dijkstra: Shortest Reach 2](/algorithms/graph-theory/dijkstra-shortest-reach-2)
   - [Search](/algorithms/search)
     * [Cut the Tree](/algorithms/search/cut-the-tree)
     * [Missing Numbers](/algorithms/search/missing-numbers)

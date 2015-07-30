@@ -7,6 +7,7 @@ This is a collection of some of my [HackerRank](https://www.hackerrank.com) chal
 1. [Algorithms](/algorithms)
   - [Dynamic Programming](/algorithms/dynamic-programming)
     * [Fibonacci Modified](/algorithms/dynamic-programming/fibonacci-modified)
+    * [Maximum Subarray](/algorithms/dynamic-programming/maximum-subarray)
   - [Graph Theory](/algorithms/graph-theory)
     * [BFS: Shortest Reach](/algorithms/graph-theory/bfs-shortest-reach)
     * [Dijkstra: Shortest Reach 2](/algorithms/graph-theory/dijkstra-shortest-reach-2)

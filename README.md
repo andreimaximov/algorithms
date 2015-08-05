@@ -14,5 +14,6 @@ This is a collection of some of my [HackerRank](https://www.hackerrank.com) chal
   - [Search](/algorithms/search)
     * [Cut the Tree](/algorithms/search/cut-the-tree)
     * [Missing Numbers](/algorithms/search/missing-numbers)
+    * [Playing With Numbers](/algorithms/search/playing-with-numbers)
   - [Sorting](/algorithms/sorting)
     * [Quicksort In-Place](/algorithms/sorting/quicksort-in-place)

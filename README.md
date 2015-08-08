@@ -12,6 +12,7 @@ This is a collection of some of my [HackerRank](https://www.hackerrank.com) chal
     * [BFS: Shortest Reach](/algorithms/graph-theory/bfs-shortest-reach)
     * [Dijkstra: Shortest Reach 2](/algorithms/graph-theory/dijkstra-shortest-reach-2)
   - [Search](/algorithms/search)
+    * [Connected Cell in a Grid](/algorithms/search/connected-cell-in-a-grid)
     * [Cut the Tree](/algorithms/search/cut-the-tree)
     * [Missing Numbers](/algorithms/search/missing-numbers)
     * [Playing With Numbers](/algorithms/search/playing-with-numbers)

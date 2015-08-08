@@ -18,3 +18,5 @@ This is a collection of some of my [HackerRank](https://www.hackerrank.com) chal
     * [Playing With Numbers](/algorithms/search/playing-with-numbers)
   - [Sorting](/algorithms/sorting)
     * [Quicksort In-Place](/algorithms/sorting/quicksort-in-place)
+  - [Strings](/algorithms/strings)
+    * [Common Child](/algorithms/strings/common-child)

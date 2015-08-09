@@ -8,6 +8,7 @@ This is a collection of some of my [HackerRank](https://www.hackerrank.com) chal
   - [Dynamic Programming](/algorithms/dynamic-programming)
     * [Fibonacci Modified](/algorithms/dynamic-programming/fibonacci-modified)
     * [Longest Common Subsequence](/algorithms/dynamic-programming/longest-common-subsequence)
+    * [Longest Increasing Subsequence](/algorithms/dynamic-programming/longest-increasing-subsequence)
     * [Maximum Subarray](/algorithms/dynamic-programming/maximum-subarray)
   - [Graph Theory](/algorithms/graph-theory)
     * [BFS: Shortest Reach](/algorithms/graph-theory/bfs-shortest-reach)

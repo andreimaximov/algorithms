@@ -5,6 +5,8 @@ This is a collection of some of my [HackerRank](https://www.hackerrank.com) chal
 ##Index
 
 1. [Algorithms](/algorithms)
+  - [Bit Manipulation](/algorithms/bit-manipulation)
+    * [Flipping Bits](/algorithms/bit-manipulation/flipping-bits)
   - [Dynamic Programming](/algorithms/dynamic-programming)
     * [Fibonacci Modified](/algorithms/dynamic-programming/fibonacci-modified)
     * [Longest Common Subsequence](/algorithms/dynamic-programming/longest-common-subsequence)

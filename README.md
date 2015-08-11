@@ -6,6 +6,7 @@ This is a collection of some of my [HackerRank](https://www.hackerrank.com) chal
 
 1. [Algorithms](/algorithms)
   - [Bit Manipulation](/algorithms/bit-manipulation)
+    * [Cipher](/algorithms/bit-manipulation/cipher)
     * [Flipping Bits](/algorithms/bit-manipulation/flipping-bits)
   - [Dynamic Programming](/algorithms/dynamic-programming)
     * [Fibonacci Modified](/algorithms/dynamic-programming/fibonacci-modified)

@@ -1,6 +1,6 @@
 #HackerRank
 
-This is a collection of some of my [HackerRank](https://www.hackerrank.com) challenge solutions.
+This is a collection of my [HackerRank](https://www.hackerrank.com) challenge solutions written in C++, Java, and Python. Each solution passes all test cases unless otherwise stated. 
 
 ##Index
 

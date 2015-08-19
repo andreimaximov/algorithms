@@ -27,3 +27,6 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
     * [Quicksort In-Place](/algorithms/sorting/quicksort-in-place)
   - [Strings](/algorithms/strings)
     * [Common Child](/algorithms/strings/common-child)
+1. [Mathematics](/mathematics)
+  - [Combinatorics](/mathematics/combinatorics)
+    * [Journey to Mars](/mathematics/combinatorics/journey-to-mars)

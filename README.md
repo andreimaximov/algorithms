@@ -6,6 +6,7 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
 
 1. [Algorithms](/algorithms)
   - [Bit Manipulation](/algorithms/bit-manipulation)
+    * [AND Product](/algorithms/bit-manipulation/and-product)
     * [Cipher](/algorithms/bit-manipulation/cipher)
     * [Flipping Bits](/algorithms/bit-manipulation/flipping-bits)
   - [Dynamic Programming](/algorithms/dynamic-programming)

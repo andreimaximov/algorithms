@@ -19,6 +19,7 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
     * [Dijkstra: Shortest Reach 2](/algorithms/graph-theory/dijkstra-shortest-reach-2)
     * [Jack goes to Rapture](/algorithms/graph-theory/jack-goes-to-rapture)
     * [Journey to the Moon](/algorithms/graph-theory/journey-to-the-moon)
+    * [Prim's (MST): Special Subtree](algorithms/graph-theory/prims-mst-special-subtree)
   - [Search](/algorithms/search)
     * [Connected Cell in a Grid](/algorithms/search/connected-cell-in-a-grid)
     * [Cut the Tree](/algorithms/search/cut-the-tree)

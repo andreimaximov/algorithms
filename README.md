@@ -17,6 +17,7 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
   - [Graph Theory](/algorithms/graph-theory)
     * [BFS: Shortest Reach](/algorithms/graph-theory/bfs-shortest-reach)
     * [Dijkstra: Shortest Reach 2](/algorithms/graph-theory/dijkstra-shortest-reach-2)
+    * [Floyd: City of Blinding Lights](/algorithms/graph-theory/floyd-city-of-blinding-lights)
     * [Jack goes to Rapture](/algorithms/graph-theory/jack-goes-to-rapture)
     * [Journey to the Moon](/algorithms/graph-theory/journey-to-the-moon)
     * [Prim's (MST): Special Subtree](algorithms/graph-theory/prims-mst-special-subtree)

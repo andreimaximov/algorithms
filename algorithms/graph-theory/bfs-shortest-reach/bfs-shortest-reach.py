@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 
-import sys;
-from Queue import Queue
+import sys
+from queue import Queue
+
 
 def read_ints():
-    return [int (x) for x in sys.stdin.readline().split(" ")]
+    return [int(x) for x in sys.stdin.readline().split(" ")]
+
 
 def build_graph(N, M):
     node_edges = [0]
@@ -18,8 +20,9 @@ def build_graph(N, M):
         M -= 1
     return node_edges
 
+
 def compute_distances(S, node_edges):
-    distances = {S:0}
+    distances = {S: 0}
     queue = Queue()
     queue.put(S)
     while (not queue.empty()):
@@ -32,15 +35,17 @@ def compute_distances(S, node_edges):
             queue.put(neighbor)
     return distances
 
+
 def print_distances(S, N, distances):
-    for i in xrange(1, N + 1):
+    for i in range(1, N + 1):
         if (i == S):
-            continue;
+            continue
         if i in distances:
-            print distances[i],
+            print(distances[i], end=" "),
         else:
-            print -1,
-    print
+            print(-1, end=" "),
+    print()
+
 
 def test_case():
     (N, M) = read_ints()
@@ -48,6 +53,7 @@ def test_case():
     S = int(sys.stdin.readline())
     distances = compute_distances(S, node_edges)
     print_distances(S, N, distances)
+
 
 def main():
     T = int(sys.stdin.readline())

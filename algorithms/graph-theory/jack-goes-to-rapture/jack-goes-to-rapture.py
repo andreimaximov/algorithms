@@ -3,21 +3,24 @@
 import sys
 import queue
 
+
 def read_ints():
-    return [int (x) for x in sys.stdin.readline().split()]
+    return [int(x) for x in sys.stdin.readline().split()]
+
 
 def build_graph(E):
     graph = {}
     while (E > 0):
         (s1, s2, cost) = read_ints()
-        if not s1 in graph:
+        if s1 not in graph:
             graph[s1] = []
         graph[s1].append((s2, cost))
-        if not s2 in graph:
+        if s2 not in graph:
             graph[s2] = []
         graph[s2].append((s1, cost))
         E -= 1
-    return graph;
+    return graph
+
 
 def next_stations(current, graph, stations_queue, costs_cache):
     for (station, cost) in graph[current]:
@@ -26,6 +29,7 @@ def next_stations(current, graph, stations_queue, costs_cache):
         if (station in costs_cache and costs_cache[station] < cost):
             continue
         stations_queue.put((cost, station))
+
 
 def calculate(graph, N):
     costs_cache = {1: 0}
@@ -39,6 +43,7 @@ def calculate(graph, N):
             continue
         costs_cache[current] = cost
         next_stations(current, graph, stations_queue, costs_cache)
+
 
 def main():
     (N, E) = read_ints()

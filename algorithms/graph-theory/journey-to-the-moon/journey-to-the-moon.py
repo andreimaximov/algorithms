@@ -3,21 +3,24 @@
 import sys
 import queue
 
+
 def read_ints():
-    return [int (x) for x in sys.stdin.readline().split()]
+    return [int(x) for x in sys.stdin.readline().split()]
+
 
 def build_graph(I):
-    graph = {};
+    graph = {}
     while (I > 0):
-        (A, B) = read_ints();
-        if (not A in graph):
+        (A, B) = read_ints()
+        if (A not in graph):
             graph[A] = []
-        if (not B in graph):
+        if (B not in graph):
             graph[B] = []
         graph[A].append(B)
         graph[B].append(A)
         I -= 1
     return graph
+
 
 def traverse(graph, astronaut):
     country_size = 0
@@ -34,6 +37,7 @@ def traverse(graph, astronaut):
             q.put(b)
     return country_size
 
+
 def combinations(graph, N):
     combinations = astronauts = 0
     for a in graph:
@@ -43,6 +47,7 @@ def combinations(graph, N):
     # Each independent astronaut will add {#astronauts} combinations
     combinations += int((astronauts + N - 1) * 0.5 * (N - astronauts))
     return combinations
+
 
 def main():
     (N, I) = read_ints()

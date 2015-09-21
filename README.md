@@ -30,6 +30,7 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
   - [Sorting](/algorithms/sorting)
     * [Quicksort In-Place](/algorithms/sorting/quicksort-in-place)
   - [Strings](/algorithms/strings)
+    * [Bigger is Greater](/algorithms/strings/bigger-is-greater)
     * [Common Child](/algorithms/strings/common-child)
     * [Pangrams](/algorithms/strings/pangrams)
 1. [Mathematics](/mathematics)

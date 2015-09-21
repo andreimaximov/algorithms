@@ -33,6 +33,7 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
     * [Bigger is Greater](/algorithms/strings/bigger-is-greater)
     * [Common Child](/algorithms/strings/common-child)
     * [Pangrams](/algorithms/strings/pangrams)
+    * [Sherlock and Anagrams](/algorithms/strings/sherlock-and-anagrams)
 1. [Mathematics](/mathematics)
   - [Combinatorics](/mathematics/combinatorics)
     * [Journey to Mars](/mathematics/combinatorics/journey-to-mars)

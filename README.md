@@ -37,6 +37,8 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
 2. [Data Structures](/data-structures)
   - [Heap](/data-structures/heap)
     * [Find Median](/data-structures/heap/find-median)
+  - [Trie](/data-structures/trie)
+    * [No Prefix Set](/data-structures/trie/no-prefix-set)
 3. [Mathematics](/mathematics)
   - [Combinatorics](/mathematics/combinatorics)
     * [Journey to Mars](/mathematics/combinatorics/journey-to-mars)

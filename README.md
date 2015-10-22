@@ -39,6 +39,7 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
     * [Find Median](/data-structures/heap/find-median)
   - [Tree](/data-structures/tree)
     * [BST: Lowest Common Ancestor](/data-structures/tree/bst-lowest-common-ancestor)
+    * [Self Balancing Tree](/data-structures/tree/self-balancing-tree)
   - [Trie](/data-structures/trie)
     * [No Prefix Set](/data-structures/trie/no-prefix-set)
 3. [Mathematics](/mathematics)

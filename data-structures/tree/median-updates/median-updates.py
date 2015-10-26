@@ -15,13 +15,14 @@ class HeapMultiSet(object):
         self.length = 0
 
     def offer(self, value):
-        # Calculate a priority for the value
-        priority = self.prioritizer(value)
-        self.heap.put((priority, value))
-
-        # Track the count of the value
-        if (value not in self.counts or self.counts[value] < 0):
+        # Add the value to the heap if it does not exist yet.
+        if (value not in self.counts or self.counts[value] <= 0):
+            # Calculate a priority for the value
+            priority = self.prioritizer(value)
+            self.heap.put((priority, value))
+            # Track the count of the value
             self.counts[value] = 0
+
         self.counts[value] += 1
 
         # Update the size of the heap

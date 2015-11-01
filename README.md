@@ -34,6 +34,7 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
     * [Common Child](/algorithms/strings/common-child)
     * [Pangrams](/algorithms/strings/pangrams)
     * [Sherlock and Anagrams](/algorithms/strings/sherlock-and-anagrams)
+    * [Two Strings](/algorithms/strings/two-strings)
 2. [Data Structures](/data-structures)
   - [Heap](/data-structures/heap)
     * [Find Median](/data-structures/heap/find-median)

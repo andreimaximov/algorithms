@@ -10,6 +10,7 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
     * [Cipher](/algorithms/bit-manipulation/cipher)
     * [Flipping Bits](/algorithms/bit-manipulation/flipping-bits)
   - [Dynamic Programming](/algorithms/dynamic-programming)
+    * [The Coin Change Problem](/algorithms/dynamic-programming/coin-change)
     * [Fibonacci Modified](/algorithms/dynamic-programming/fibonacci-modified)
     * [Longest Common Subsequence](/algorithms/dynamic-programming/longest-common-subsequence)
     * [Longest Increasing Subsequence](/algorithms/dynamic-programming/longest-increasing-subsequence)

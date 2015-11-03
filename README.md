@@ -26,6 +26,7 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
   - [Search](/algorithms/search)
     * [Connected Cell in a Grid](/algorithms/search/connected-cell-in-a-grid)
     * [Cut the Tree](/algorithms/search/cut-the-tree)
+    * [Maximise Sum](/algorithms/search/maximise-sum)
     * [Missing Numbers](/algorithms/search/missing-numbers)
     * [Pairs](/algorithms/search/pairs)
     * [Playing With Numbers](/algorithms/search/playing-with-numbers)

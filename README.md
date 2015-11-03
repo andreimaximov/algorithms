@@ -29,6 +29,7 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
     * [Missing Numbers](/algorithms/search/missing-numbers)
     * [Pairs](/algorithms/search/pairs)
     * [Playing With Numbers](/algorithms/search/playing-with-numbers)
+    * [Sherlock and Array](/algorithms/search/sherlock-and-array)
   - [Sorting](/algorithms/sorting)
     * [Quicksort In-Place](/algorithms/sorting/quicksort-in-place)
   - [Strings](/algorithms/strings)

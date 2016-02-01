@@ -23,6 +23,8 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
     * [Jack goes to Rapture](/algorithms/graph-theory/jack-goes-to-rapture)
     * [Journey to the Moon](/algorithms/graph-theory/journey-to-the-moon)
     * [Prim's (MST): Special Subtree](algorithms/graph-theory/prims-mst-special-subtree)
+  - [Implementation](/algorithms/implementation)
+    * [Matrix Rotation](/algorithms/implementation/matrix-rotation)
   - [Search](/algorithms/search)
     * [Connected Cell in a Grid](/algorithms/search/connected-cell-in-a-grid)
     * [Cut the Tree](/algorithms/search/cut-the-tree)

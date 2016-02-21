@@ -16,6 +16,7 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
     * [Longest Common Subsequence](/algorithms/dynamic-programming/longest-common-subsequence)
     * [Longest Increasing Subsequence](/algorithms/dynamic-programming/longest-increasing-subsequence)
     * [Maximum Subarray](/algorithms/dynamic-programming/maximum-subarray)
+    * [Square Subsequences](/algorithms/dynamic-programming/square-subsequences)
   - [Graph Theory](/algorithms/graph-theory)
     * [BFS: Shortest Reach](/algorithms/graph-theory/bfs-shortest-reach)
     * [Dijkstra: Shortest Reach 2](/algorithms/graph-theory/dijkstra-shortest-reach-2)

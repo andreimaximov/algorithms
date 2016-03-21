@@ -54,3 +54,4 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
 3. [Mathematics](/mathematics)
   - [Combinatorics](/mathematics/combinatorics)
     * [Journey to Mars](/mathematics/combinatorics/journey-to-mars)
+    * [nCr Table](/mathematics/combinatorics/ncr-table)

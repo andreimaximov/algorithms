@@ -53,5 +53,6 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
     * [No Prefix Set](/data-structures/trie/no-prefix-set)
 3. [Mathematics](/mathematics)
   - [Combinatorics](/mathematics/combinatorics)
+    * [Choose and Calculate](/mathematics/combinatorics/choose-and-calculate)
     * [Journey to Mars](/mathematics/combinatorics/journey-to-mars)
     * [nCr Table](/mathematics/combinatorics/ncr-table)

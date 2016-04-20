@@ -1,7 +1,7 @@
 default: build run
 
 build:
-	javac CutTheTree.java
+	javac Solution.java
 
 run:
-	java CutTheTree
+	java Solution

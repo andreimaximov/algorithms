@@ -1,7 +1,7 @@
 default: build run
 
 build:
-	javac MaximiseSum.java
+	javac Solution.java
 
 run:
-	java MaximiseSum
+	java Solution

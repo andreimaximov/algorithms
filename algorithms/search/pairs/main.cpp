@@ -2,45 +2,38 @@
 #include <vector>
 #include <queue>
 
-using namespace std;
-
-typedef priority_queue<int, vector<int>> numbers_queue;
-
-numbers_queue* build_queue(int N)
-{
-    numbers_queue* q = new numbers_queue();
-    int number;
-    while (N--) {
-        scanf("%d", &number);
-        q->push(number);
-    }
-    return q;
+std::priority_queue<int> buildqueue(std::istream& in, int N) { // NOLINT
+  std::priority_queue<int> queue;
+  int i;
+  while (N-- > 0) {
+    in >> i;
+    queue.push(i);
+  }
+  return queue;
 }
 
-int pairs(numbers_queue* q, int N, int K)
-{
-    int index = 0, left = 0, count = 0;
-    vector<int> numbers(N);
-    while (!q->empty()) {
-        numbers[index] = q->top();
-        q->pop();
-        while (left < index && numbers[left] > numbers[index] + K) {
-            left++;
-        }
-        if (numbers[left] == numbers[index] + K) {
-            count++;
-        }
-        index++;
+int pairs(std::istream& in, int N, int K) { // NOLINT
+  std::priority_queue<int> queue = buildqueue(in, N);
+
+  int index = 0, high = 0, count = 0;
+  std::vector<int> numbers(N);
+  while (!queue.empty()) {
+    numbers[index] = queue.top();
+    queue.pop();
+    while (high < index && numbers[high] > numbers[index] + K) {
+      ++high;
     }
-    return count;
+    if (numbers[high] == numbers[index] + K) {
+      ++count;
+    }
+    ++index;
+  }
+
+  return count;
 }
 
-int main()
-{
-    int N, K;
-    scanf("%d%d", &N, &K);
-    numbers_queue* q = build_queue(N);
-    printf("%d\n", pairs(q, N, K));
-    delete q;
-    return 0;
+int main() {
+  int N, K;
+  std::cin >> N >> K;
+  std::cout << pairs(std::cin, N, K) << std::endl;
 }

@@ -1,7 +1,10 @@
+CXX := g++
+CXXFLAGS := -std=c++11 -stdlib=libc++ -Wall -o out
+
 default: build run
 
 build:
-	javac SherlockAndArray.java
+	$(CXX) $(CXXFLAGS) main.cpp
 
 run:
-	java SherlockAndArray
+	./out

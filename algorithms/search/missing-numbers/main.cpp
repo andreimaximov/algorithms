@@ -1,51 +1,55 @@
 #include <iostream>
-#include <climits>
+#include <vector>
 
-using namespace std;
+#define RANGE 101
 
-const int range = 101;
+typedef std::vector<int> list;
 
-void flush_line()
-{
-    cin.clear();
-    cin.ignore(INT_MAX, '\n');
+template<typename T>
+struct inc {
+  inline T operator()(const T& value) {
+    return value + 1;
+  }
+};
+
+template<typename T>
+struct dec {
+  inline T operator()(const T& value) {
+    return value - 1;
+  }
+};
+
+template<typename Operator>
+int calculate(list& frequencies, list& numbers, int begin) { // NOLINT
+  Operator op;
+  int size;
+  std::cin >> size;
+  while (size-- > 0) {
+    int n;
+    std::cin >> n;
+    int index = n % RANGE;  // Index where we want to place this number
+    frequencies[index] = op(frequencies[index]);
+    numbers[index] = n;
+    if (begin == -1 || n < numbers[begin]) {
+      begin = index;
+    }
+  }
+  return begin;
 }
 
-void next(int *freq_map, int *num_map, int n, bool add, int &min)
-{
-    int k, m;
-    cin >> k;
-    while (k > 0) {
-        cin >> m;
-        int mod = m % n;
-        if (add) {
-            ++freq_map[mod];
-        } else {
-            --freq_map[mod];
-        }
-        num_map[mod] = m;
-        if (min == -1 || m < num_map[min]) {
-            min = mod;
-        }
-        --k;
-    }
-    flush_line();
-}
+int main() {
+  std::vector<int> frequencies(RANGE, 0);
+  std::vector<int> numbers(RANGE, 0);
 
-int main()
-{
-    int freq_map[range] = {0};
-    int num_map[range] = {0};
-    int min = -1;
-    next(freq_map, num_map, range, true, min);
-    next(freq_map, num_map, range, false, min);
-    int index;
-    for (int i = 0; i < range; ++i) {
-        index = (i + min) % (range - 1);
-        if (freq_map[index] == 0) {
-            continue;
-        }
-        cout << num_map[index] << ' ';
+  int begin = -1;
+  begin = calculate<inc<int>>(frequencies, numbers, begin);
+  begin = calculate<dec<int>>(frequencies, numbers, begin);
+
+  for (size_t i = 0; i < frequencies.size(); ++i) {
+    size_t index = (i + begin) % (RANGE - 1);
+    if (frequencies[index] != 0) {
+      std::cout << numbers[index] << " ";
     }
-    cout << endl;
+  }
+  std::cout << std::endl;
 }

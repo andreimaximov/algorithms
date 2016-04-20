@@ -1,52 +1,50 @@
 #include <iostream>
+#include <vector>
 
-using namespace std;
-
-int* build_sequence(int N) {
-    int* sequence = new int[N];
-    for (int i = 0; i < N; i++) {
-        scanf("%d", &sequence[i]);
-    }
-    return sequence;
+std::vector<int> build(int length) {
+  std::vector<int> sequence(length);
+  for (size_t i = 0; i < length; ++i) {
+    std::cin >> sequence[i];
+  }
+  return sequence;
 }
 
-int tails_ceil(int* tails, int last_index, int replacement) {
-    int l = 0, r = last_index, m;
-    while (r > l + 1) {
-        // This works because len <= 10^6.
-        m = (l + r)/2;
-        if (tails[m] >= replacement) {
-            r = m;
-        } else {
-            l = m;
-        }
+//  Returns index of ceil of value in tails. (i.e. the smallest element greater
+//  than value)
+int searchceil(const std::vector<int>& tails, size_t last, int value) {
+  size_t left = 0, right = last;
+  while (right > left + 1) {
+    size_t mid = (left + right)/2;  // Works because tails.size() <= 10^6.
+    if (tails[mid] >= value) {
+      right = mid;
+    } else {
+      left = mid;
     }
-    return r;
+  }
+  return right;
 }
 
-int lis(int* sequence, int N) {
-    int* tails = new int[N];
-    tails[0] = sequence[0];
-    int last_index = 0, existing_index;
-    for (int i = 1; i < N; i++) {
-        if (sequence[i] <= tails[0]) {
-            tails[0] = sequence[i];
-        } else if (sequence[i] > tails[last_index]) {
-            tails[++last_index] = sequence[i];
-        } else {
-            existing_index = tails_ceil(tails, last_index, sequence[i]);
-            tails[existing_index] = sequence[i];
-        }
+int lis(const std::vector<int>& sequence) {
+  std::vector<int> tails(sequence.size());
+  tails[0] = sequence[0];
+  size_t last = 0;
+  for (size_t i = 1; i < sequence.size(); i++) {
+    if (sequence[i] <= tails[0]) {
+      tails[0] = sequence[i];
+    } else if (sequence[i] > tails[last]) {
+      tails[++last] = sequence[i];
+    } else {
+      size_t existing_index = searchceil(tails, last, sequence[i]);
+      tails[existing_index] = sequence[i];
     }
-    return last_index + 1;
+  }
+  return last + 1;
 }
 
-int main()
-{
-    int N;
-    scanf("%d", &N);
-    int* sequence = build_sequence(N);
-    printf("%d\n", lis(sequence, N));
-    delete [] sequence;
-    return 0;
+int main() {
+  int N;
+  std::cin >> N;
+  std::vector<int> sequence = build(N);
+  std::cout << lis(sequence);
+  return 0;
 }

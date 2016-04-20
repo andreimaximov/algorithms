@@ -1,7 +1,7 @@
 default: build run
 
 build:
-	javac QuicksortInPlace.java
+	javac Solution.java
 
 run:
-	java QuicksortInPlace
+	java Solution

@@ -1,62 +1,56 @@
 #include <iostream>
-#include <limits.h>
+#include <vector>
+#include <limits>
 
-using namespace std;
-
-int* build_array(int N) {
-    int* array = new int[N];
-    for (int i = 0; i < N; i++) {
-        cin >> array[i];
-    }
-    cin.ignore();
-    return array;
+std::vector<int> build(int N) {
+  std::vector<int> array(N);
+  for (size_t i = 0; i < array.size(); ++i) {
+    std::cin >> array[i];
+  }
+  return array;
 }
 
-int kadane(int* array, int N) {
-    int max_here = 0, max_previous = INT_MIN, max_all = INT_MIN, current = 0;
-    for (int i = 0; i < N; i++) {
-        current = array[i];
-        max_here = max(max_previous, max_here + current);
-        max_all = max(max_all, max_here);
-        max_previous = min(0, max_here);
-    }
-    return max_all;
+template<typename T>
+T kadane(const std::vector<T>& array) {
+  T all = array[0], here = array[0];
+  for (size_t i = 1; i < array.size(); ++i) {
+    here = std::max(array[i], here + array[i]);
+    all = std::max(all, here);
+  }
+  return all;
 }
 
-int max_element_sum(int* array, int N) {
-    int max_sum = INT_MIN, current = 0;
-    for (int i = 0; i < N; i++) {
-        current = array[i];
-        if (max_sum < 0 && current < 0) {
-            max_sum = max(max_sum, current);
-            continue;
-        }
-        max_sum = max(0, max_sum);
-        max_sum += max(0, current);
+template<typename T>
+T max_noncontig_sum(const std::vector<T>& array) {
+  T max = std::numeric_limits<T>::min();
+  T current = 0;
+  for (size_t i = 0; i < array.size(); ++i) {
+    current = array[i];
+    if (max < 0 && current < 0) {
+      max = std::max(max, current);
+      continue;
     }
-    return max_sum;
+    max = std::max(0, max);
+    max += std::max(0, current);
+  }
+  return max;
 }
 
-void test_case()
-{
-    int N = 0;
-    cin >> N;
-    cin.ignore();
-    int* array = build_array(N);
-    int max_cont = kadane(array, N);
-    int max_non_cont = max_element_sum(array, N);
-    delete [] array;
-    cout << max_cont << " " << max_non_cont << endl;
+void test() {
+  size_t N = 0;
+  std::cin >> N;
+  std::cin.ignore();
+  std::vector<int> array = build(N);
+  int cont = kadane<int>(array);
+  int non_cont = max_noncontig_sum<int>(array);
+  std::cout << cont << " " << non_cont << std::endl;
 }
 
-int main()
-{
-    int T = 0;
-    cin >> T;
-    cin.ignore();
-    while (T > 0) {
-        test_case();
-        T--;
-    }
-    return 0;
+int main() {
+  int T = 0;
+  std::cin >> T;
+  while (T--) {
+      test();
+  }
+  return 0;
 }

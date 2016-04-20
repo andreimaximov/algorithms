@@ -1,64 +1,65 @@
 #include <iostream>
+#include <vector>
+#include <iterator>
 
-using namespace std;
+typedef std::vector<std::vector<int>> matrix;
 
-int* build_sequence(int length) {
-    int* sequence = new int[length];
-    for (int i = 0; i < length; i++) {
-        cin >> sequence[i];
-    }
-    return sequence;
+std::vector<int> build(int length) {
+  std::vector<int> sequence(length);
+  for (size_t i = 0; i < length; ++i) {
+    std::cin >> sequence[i];
+  }
+  return sequence;
 }
 
-int** _lcs(int* a, int n, int *b, int m) {
-    m++;n++;
-    int** cache = new int*[n];
-    for (int i = 0; i < n; i++) {
-        cache[i] = new int[m];
-        for (int j = 0; j < m; j++) {
-            if (i == 0 || j == 0) {
-                cache[i][j] = 0;
-            } else if (a[i - 1] == b[j - 1]) {
-                cache[i][j] = cache[i - 1][j - 1] + 1;
-            } else {
-                cache[i][j] = max(cache[i][j - 1],  cache[i - 1][j]);
-            }
-        }
+matrix _lcs(const std::vector<int>& a, const std::vector<int>& b) {
+  int n = a.size() + 1;
+  int m = b.size() + 1;
+  matrix cache(n, std::vector<int>(m, 0));
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+      if (i == 0 || j == 0) {
+        cache[i][j] = 0;
+      } else if (a[i - 1] == b[j - 1]) {
+        cache[i][j] = cache[i - 1][j - 1] + 1;
+      } else {
+        cache[i][j] = std::max(cache[i][j - 1],  cache[i - 1][j]);
+      }
     }
-    return cache;
+  }
+  return cache;
 }
 
-int* lcs(int* a, int n, int* b, int m) {
-    int** cache = _lcs(a, n, b, m);
-    int i = n, j = m, index = cache[n][m];
+std::vector<int> lcs(const std::vector<int>& a, const std::vector<int>& b) {
+  matrix cache = _lcs(a, b);
+  int n = a.size();
+  int m = b.size();
+  int index = cache[n][m];
 
-    int* sub_seq = new int[index + 1];
-    sub_seq[index] = -1;
+  std::vector<int> subseq(index);
 
-    while (i > 0 && j > 0) {
-        if (a[i - 1] == b[j - 1]) {
-            sub_seq[--index] = a[i - 1];
-            i--;j--;
-        } else if (cache[i - 1][j] > cache[i][j - 1]) {
-            i--;
-        } else {
-            j--;
-        }
+  while (n > 0 && m > 0) {
+    if (a[n - 1] == b[m - 1]) {
+      subseq[--index] = a[n - 1];
+      --n; --m;
+    } else if (cache[n - 1][m] > cache[n][m - 1]) {
+      --n;
+    } else {
+      --m;
     }
+  }
 
-    return sub_seq;
+  return subseq;
 }
 
-int main()
-{
-    int n, m;
-    cin >> n >> m;
-    int *a = build_sequence(n);
-    int *b = build_sequence(m);
-    int* sub_seq = lcs(a, n, b, m);
-    while (*sub_seq != -1) {
-        printf("%d ", *sub_seq++);
-    }
-    printf("\n");
-    return 0;
+int main() {
+  int n, m;
+  std::cin >> n >> m;
+  std::vector<int> a = build(n);
+  std::vector<int> b = build(m);
+
+  std::vector<int> subseq = lcs(a, b);
+  std::ostream_iterator<int> out(std::cout, " ");
+  std::copy(subseq.begin(), subseq.end(), out);
+  return 0;
 }

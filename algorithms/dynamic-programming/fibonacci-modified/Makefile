@@ -1,7 +1,7 @@
 default: build run
 
 build:
-	javac Fibonacci.java
+	javac Solution.java
 
 run:
-	java Fibonacci
+	java Solution

@@ -1,7 +1,10 @@
+CXX := g++
+CXXFLAGS := -std=c++11 -stdlib=libc++ -Wall -o out
+
 default: build run
 
 build:
-	clang++ -std=c++11 -stdlib=libc++ -Wall main.cpp
+	$(CXX) $(CXXFLAGS) main.cpp
 
 run:
-	./a.out
+	./out

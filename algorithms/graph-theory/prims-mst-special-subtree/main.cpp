@@ -2,82 +2,77 @@
 #include <vector>
 #include <queue>
 
-using namespace std;
-
-struct vertex;
-struct edge;
-struct edge_comparator;
-
-typedef priority_queue<edge, vector<edge>, edge_comparator> edge_queue;
-
-struct vertex
-{
-    vector<edge> edges;
-    bool visited = false;
+struct edge {
+  int to;  // The vertex this edge is directed at
+  int cost;
 };
 
-struct edge
-{
-    int v_index = 0;
+struct vertex {
+  std::vector<edge> edges;
+};
+
+struct comparator {
+  bool operator()(const edge& lhs, const edge& rhs) {
+    return lhs.cost > rhs.cost;
+  }
+};
+
+class subgraph {
+ private:
+  typedef std::priority_queue<edge, std::vector<edge>, comparator> edgequeue;
+
+  std::vector<bool> visited;
+
+  edgequeue queue;
+
+  void push(const vertex& node) {
+    for (const edge& edge : node.edges) {
+      if (this->visited[edge.to]) {
+        continue;
+      }
+      this->queue.push(edge);
+    }
+  }
+
+ public:
+  int calculate(const std::vector<vertex>& verticies, int S) {
     int cost = 0;
+    this->visited.assign(verticies.size(), false);
 
-    edge(int v_index, int cost) : v_index(v_index), cost(cost) {}
-};
-
-struct edge_comparator
-{
-    bool operator()(edge a, edge b)
-    {
-        return a.cost > b.cost;
+    this->queue.emplace(edge {S, 0});
+    while (!this->queue.empty()) {
+      edge current = this->queue.top();
+      this->queue.pop();
+      if (this->visited[current.to]) {
+        continue;
+      }
+      this->visited[current.to] = true;
+      cost += current.cost;
+      this->push(verticies[current.to]);
     }
-};
 
-void queue_edges(edge_queue &q, vector<vertex> &verticies, vector<edge> &edges)
-{
-    for (size_t i = 0; i < edges.size(); ++i) {
-        if (verticies[edges[i].v_index].visited) {
-            continue;
-        }
-        q.push(edges[i]);
-    }
-}
-
-int sub_graph(vector<vertex> &verticies, int S)
-{
-    int cost = 0;
-
-    edge_queue q;
-    q.push(edge {S, 0});
-
-    while (!q.empty()) {
-        edge e = q.top();
-        q.pop();
-        if (verticies[e.v_index].visited) {
-            continue;
-        }
-        verticies[e.v_index].visited = true;
-        cost += e.cost;
-        queue_edges(q, verticies, verticies[e.v_index].edges);
-    }
+    this->visited.clear();  // Clear visited vertices
+    this->queue = edgequeue();  // Clear the edge queue
 
     return cost;
-}
+  }
+};
 
-int main()
-{
-    int N, M, x, y, r, S;
-    cin >> N >> M;
+int main() {
+  int N, M, x, y, r, S;
+  std::cin >> N >> M;
 
-    vector<vertex> verticies(N + 1);
+  std::vector<vertex> verticies(N + 1);
+  for (size_t i = 0; i < M; ++i) {
+    std::cin >> x >> y >> r;
+    verticies[x].edges.emplace_back(edge {y, r});
+    verticies[y].edges.emplace_back(edge {x, r});
+  }
 
-    for(size_t i = 0; i < M; ++i) {
-        cin >> x >> y >> r;
-        verticies[x].edges.emplace_back(y, r);
-        verticies[y].edges.emplace_back(x, r);
-    }
+  subgraph sub;
 
-    cin >> S;
-    cout << sub_graph(verticies, S) << endl;
+  std::cin >> S;
+  std::cout << sub.calculate(verticies, S) << std::endl;
 
-    return 0;
+  return 0;
 }

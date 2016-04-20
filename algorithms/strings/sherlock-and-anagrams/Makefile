@@ -1,7 +1,7 @@
 default: build run
 
 build:
-	javac SherlockAndAnagrams.java
+	javac Solution.java
 
 run:
-	java SherlockAndAnagrams
+	java Solution

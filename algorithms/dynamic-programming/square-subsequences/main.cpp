@@ -14,18 +14,18 @@ typedef std::vector<std::vector<uint32_t>> matrix;
  */
 class substring {
  private:
-  const std::string &source;
+  const std::string& source;
 
   size_t start;
 
   size_t end;
 
  public:
-  substring(const std::string &source, size_t start, size_t end) :
+  substring(const std::string& source, size_t start, size_t end) :
     source(source), start(start), end(end) {
   }
 
-  const char &operator[](size_t i) const {
+  const char& operator[](size_t i) const {
     if (i >= this->length()) {
       throw std::invalid_argument("Out of bounds!");
     }
@@ -37,16 +37,16 @@ class substring {
   }
 };
 
-uint32_t add(const uint32_t &a, const uint32_t &b) {
+uint32_t add(const uint32_t& a, const uint32_t& b) {
   return ((uint64_t) a + b) % MOD;
 }
 
-uint32_t sub(const uint32_t &a, const uint32_t &b) {
+uint32_t sub(const uint32_t& a, const uint32_t& b) {
   return ((uint64_t) a - b + MOD) % MOD;
 }
 
 template<class S, class C>
-uint32_t common(const S &a, const S &b, C &cache) { // NOLINT
+uint32_t common(const S& a, const S& b, C& cache) { // NOLINT
   cache[0][0] = 1;
 
   for (size_t j = 0; j <= a.length(); j++) {
@@ -75,7 +75,7 @@ uint32_t common(const S &a, const S &b, C &cache) { // NOLINT
   return count;
 }
 
-uint32_t countss(const std::string &str, matrix &cache) { // NOLINT
+uint32_t countss(const std::string& str, matrix& cache) { // NOLINT
   uint32_t count = 0;
   for (size_t i = 0; i < str.length() - 1; i++) {
     substring a(str, 0, i);
@@ -85,7 +85,7 @@ uint32_t countss(const std::string &str, matrix &cache) { // NOLINT
   return count;
 }
 
-uint32_t countss(const std::string &str) {
+uint32_t countss(const std::string& str) {
   matrix cache(MAX_LENGTH + 1, std::vector<uint32_t>(MAX_LENGTH + 1, 0));
   return countss(str, cache);
 }

@@ -1,59 +1,58 @@
 #include <iostream>
-#include <stack>
+#include <vector>
 
-using namespace std;
+const int16_t DELTA_X[] = {-1, 0, 1, 1, 1, 0, -1, -1};
+const int16_t DELTA_Y[] = {-1, -1, -1, 0, 1, 1, 1, 0};
 
-const int delta_x[] = {-1, 0, 1, 1, 1, 0, -1, -1};
-const int delta_y[] = {-1, -1, -1, 0, 1, 1, 1, 0};
+typedef std::vector<std::vector<int>> matrix;
 
-int** build_grid(int m, int n) {
-    int** grid = new int*[m];
-    for (int i = 0; i < m; i++) {
-        grid[i] = new int[n];
-        for (int k = 0; k < n; k++) {
-            scanf("%d", &grid[i][k]);
-        }
+matrix load(int m, int n) {
+  matrix mtx(m, std::vector<int>(n));
+  for (int i = 0; i < m; ++i) {
+    for (int k = 0; k < n; ++k) {
+      std::cin >> mtx[i][k];
     }
-    return grid;
+  }
+  return mtx;
 }
 
-int flood_fill(int** grid, int m, int n, int r, int c) {
-    int size = 1, x, y;
-    grid[r][c] = 0;
-    for (int i = 0; i < 8; i++) {
-        x = c + delta_x[i];
-        y = r + delta_y[i];
-        // Out of bounds check.
-        if (x < 0 || x >= n || y < 0 || y >= m) {
-            continue;
-        }
-        // Out of region or already visited.
-        if (grid[y][x] == 0) {
-            continue;
-        }
-        size += flood_fill(grid, m, n, y, x);
+int floodfill(matrix& mtx, int row, int col) { // NOLINT
+  int size = 1;
+  mtx[row][col] = 0;
+  for (int i = 0; i < 8; ++i) {
+    int16_t x = col + DELTA_X[i];
+    int16_t y = row + DELTA_Y[i];
+    // Check if out of bounds
+    if (x < 0 || x >= mtx[y].size() || y < 0 || y >= mtx.size()) {
+      continue;
     }
-    return size;
+    // Out of region or already visited
+    if (mtx[y][x] == 0) {
+      continue;
+    }
+    size += floodfill(mtx, y, x);
+  }
+  return size;
 }
 
-int max_region(int** grid, int m, int n) {
-    int largest_region = 0;
-    for (int i = 0; i < m; i++) {
-        for (int k = 0; k < n; k++) {
-            // Skip out of region or visited cells.
-            if (grid[i][k] == 0) {
-                continue;
-            }
-            largest_region = max(largest_region, flood_fill(grid, m, n, i, k));
-        }
+int maxregion(matrix& mtx) { // NOLINT
+  int largest = 0;
+  for (int r = 0; r < mtx.size(); ++r) {
+    for (int c = 0; c < mtx[r].size(); ++c) {
+      // Skip visited cells
+      if (mtx[r][c] == 0) {
+        continue;
+      }
+      largest = std::max(largest, floodfill(mtx, r, c));
     }
-    return largest_region;
+  }
+  return largest;
 }
 
 int main() {
-    int m, n;
-    scanf("%d %d", &m, &n);
-    int** grid = build_grid(m, n);
-    printf("%d\n", max_region(grid, m, n));
-    return 0;
+  int m, n;
+  std::cin >> m >> n;
+  matrix mtx = load(m, n);
+  std::cout << maxregion(mtx) << std::endl;;
+  return 0;
 }

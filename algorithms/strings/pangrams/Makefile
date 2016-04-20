@@ -1,7 +1,7 @@
 default: build run
 
 build:
-	javac Pangrams.java
+	javac Solution.java
 
 run:
-	java Pangrams
+	java Solution

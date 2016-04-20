@@ -1,7 +1,7 @@
 default: build run
 
 build:
-	javac NoPrefixSet.java
+	javac Solution.java
 
 run:
-	java NoPrefixSet
+	java Solution

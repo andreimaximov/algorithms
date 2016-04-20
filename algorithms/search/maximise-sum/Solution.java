@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.TreeSet;
 
-public class MaximiseSum {
+public class Solution {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     int t = Integer.parseInt(scanner.nextLine());

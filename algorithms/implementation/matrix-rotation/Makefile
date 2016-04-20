@@ -1,12 +1,10 @@
 CXX := g++
-CXXFLAGS := -std=c++11 -stdlib=libc++ -Wall
-
-TARGET := a.out
+CXXFLAGS := -std=c++11 -stdlib=libc++ -Wall -o out
 
 default: build run
 
 build:
-	$(CXX) $(CXXFLAGS) main.cpp -o $(TARGET)
+	$(CXX) $(CXXFLAGS) main.cpp
 
 run:
-	./$(TARGET)
+	./out

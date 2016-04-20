@@ -1,7 +1,7 @@
 default: build run
 
 build:
-	javac BiggerIsGreater.java
+	javac Solution.java
 
 run:
-	java BiggerIsGreater
+	java Solution

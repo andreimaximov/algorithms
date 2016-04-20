@@ -1,75 +1,66 @@
 #include <iostream>
 
-using namespace std;
+#define DEV 1
 
-typedef struct node
-{
-   int data;
-   node* left;
-   node* right;
-} node;
+#if DEV
+struct node {
+  int data;
+  node* left;
+  node* right;
+};
+#endif
 
-node* lca(node* root, int v1, int v2);
-node* lca_helper(node* root, int v1, int v2);
-bool contains(node* root, int data);
-
-node* lca(node* root, int v1, int v2)
-{
-    if (!contains(root, v1) || !contains(root, v2)) {
-        return NULL;
-    }
-    return lca_helper(root, v1, v2);
+bool contains(node* root, int value) {
+  if (root == nullptr) {
+    return false;
+  } else if (root->data == value) {
+    return true;
+  } else if (root->data < value) {
+    return contains(root->right, value);
+  } else {
+    return contains(root->left, value);
+  }
 }
 
-node* lca_helper(node* root, int v1, int v2)
-{
-    if (root == NULL) {
-        return NULL;
-    }
+node* lca_helper(node* root, int a, int b) {
+  if (root == nullptr) {
+    return nullptr;
+  }
 
-    if (root->data == v1 || root->data == v2) {
-        return root;
-    }
+  if (root->data == a || root->data == b) {
+    return root;
+  }
 
-    bool v1OnLeft = contains(root->left, v1);
-    bool v2OnLeft = contains(root->left, v2);
+  bool left = contains(root->left, a);
 
-    if (v1OnLeft != v2OnLeft) {
-        return root;
-    }
+  if (left != contains(root->left, b)) {
+    return root;
+  }
 
-    root = v1OnLeft == true ? root->left : root->right;
-    return lca_helper(root, v1, v2);
+  root = left == true ? root->left : root->right;
+  return lca_helper(root, a, b);
 }
 
-bool contains(node* root, int data)
-{
-    if (root == NULL) {
-        return false;
-    }
-    if (root->data == data) {
-        return true;
-    }
-    return contains(root->left, data) || contains(root->right, data);
+node* lca(node* root, int a, int b) {
+  if (!contains(root, a) || !contains(root, b)) {
+    return nullptr;
+  }
+  return lca_helper(root, a, b);
 }
 
-int main()
-{
-    node left = { 1 };
-    node right = { 3 };
-    node root = {
-        2,
-        &left,
-        &right
-    };
+#if DEV
+int main() {
+  node left {1};
+  node right {3};
+  node root {2, &left, &right};
 
-    node* ancestor = lca(&root, 1, 3);
+  node* ancestor = lca(&root, 1, 3);
+  if (ancestor == &root) {
+    std::cout << "LCA of 1 and 3 is " << ancestor->data << std::endl;
+  } else {
+    std::cerr << "Error!" << std::endl;
+  }
 
-    if (ancestor == &root) {
-        cout << "Lowest common ancestor of 1 and 3 is " << ancestor->data << endl;
-    } else {
-        cerr << "An error occurred!" << endl;
-    }
-
-    return 0;
+  return 0;
 }
+#endif

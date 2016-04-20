@@ -1,39 +1,35 @@
 #include <iostream>
+#include <vector>
+#include <iterator>
 
-using namespace std;
-
-int* read_message(int length) {
-    int* message = new int[length];
-    for (int i = 0; i < length; i++) {
-        scanf("%1d", &message[i]);
+std::vector<bool> decode(const std::vector<bool>& message, int N, int K) {
+  bool last_k_xor = message[0];
+  std::vector<bool> decoded(N, 0);
+  decoded[0] = message[0];
+  for (int i = 1; i < N; ++i) {
+    if (i >= K) {
+      last_k_xor = last_k_xor ^ decoded[i - K];
     }
-    return message;
-}
-
-int* decode(int* message, int length, int N, int K) {
-    int last_k_xor = message[0];
-    int* decoded = new int[N];
-    decoded[0] = message[0];
-    for (int i = 1; i < N; i++) {
-        if (i >= K) {
-            last_k_xor = last_k_xor ^ decoded[i - K];
-        }
-        decoded[i] = last_k_xor ^ message[i];
-        last_k_xor = last_k_xor ^ decoded[i];
-    }
-    return decoded;
+    decoded[i] = last_k_xor ^ message[i];
+    last_k_xor = last_k_xor ^ decoded[i];
+  }
+  return decoded;
 }
 
 int main() {
-    int N, K;
-    scanf("%d", &N);
-    scanf("%d", &K);
-    int length = N + K - 1;
-    int* S = read_message(length);
-    int* decoded = decode(S, length, N, K);
-    for (int i = 0; i < N; i++) {
-        printf("%d", decoded[i]);
-    }
-    printf("\n");
-    return 0;
+  int N, K;
+  std::cin >> N >> K;
+
+  int length = N + K - 1;
+  std::vector<bool> message(length);
+  char c;
+  for (size_t i = 0; i < message.size(); ++i) {
+    std::cin >> c;
+    message[i] = c - '0';
+  }
+
+  std::vector<bool> decoded = decode(message, N, K);
+  std::ostream_iterator<bool> out(std::cout);
+  std::copy(decoded.begin(), decoded.end(), out);
+  return 0;
 }

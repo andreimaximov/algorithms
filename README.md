@@ -13,6 +13,7 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
     * [Candies](/algorithms/dynamic-programming/candies)
     * [The Coin Change Problem](/algorithms/dynamic-programming/coin-change)
     * [Fibonacci Modified](/algorithms/dynamic-programming/fibonacci-modified)
+    * [Grid Walking](/algorithms/dynamic-programming/grid-walking)
     * [Longest Common Subsequence](/algorithms/dynamic-programming/longest-common-subsequence)
     * [Longest Increasing Subsequence](/algorithms/dynamic-programming/longest-increasing-subsequence)
     * [Maximum Subarray](/algorithms/dynamic-programming/maximum-subarray)

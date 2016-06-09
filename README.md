@@ -45,6 +45,8 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
     * [Sherlock and Anagrams](/algorithms/strings/sherlock-and-anagrams)
     * [Two Strings](/algorithms/strings/two-strings)
 2. [Data Structures](/data-structures)
+  - [Disjoint Set](/data-structures/disjoint-set)
+    * [Merging Communities](/data-structures/disjoint-set/merging-communities)
   - [Heap](/data-structures/heap)
     * [Find Median](/data-structures/heap/find-median)
   - [Tree](/data-structures/tree)

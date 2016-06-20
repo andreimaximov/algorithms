@@ -1,8 +1,10 @@
-#HackerRank
+# README
 
-This is a collection of my [HackerRank](https://www.hackerrank.com) challenge solutions written in C++, Java, and Python 3. Each solution passes all test cases unless otherwise stated.
+This is a collection of my [HackerRank](https://www.hackerrank.com) and
+[LeetCode](https://leetcode.com) challenge solutions written in C++, Java, and
+Python 3. Each solution passes all test cases unless otherwise stated.
 
-##Index
+## Index
 
 1. [Algorithms](/algorithms)
   - [Bit Manipulation](/algorithms/bit-manipulation)
@@ -61,3 +63,6 @@ This is a collection of my [HackerRank](https://www.hackerrank.com) challenge so
     * [Choose and Calculate](/mathematics/combinatorics/choose-and-calculate)
     * [Journey to Mars](/mathematics/combinatorics/journey-to-mars)
     * [nCr Table](/mathematics/combinatorics/ncr-table)
+4. [LeetCode](/leetcode)
+  - [Algorithms](/leetcode/algorithms)
+    * [N-Queens II](/leetcode/algorithms/n-queens-ii)

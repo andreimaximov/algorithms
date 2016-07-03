@@ -65,5 +65,6 @@ Python 3. Each solution passes all test cases unless otherwise stated.
     * [nCr Table](/mathematics/combinatorics/ncr-table)
 4. [LeetCode](/leetcode)
   - [Algorithms](/leetcode/algorithms)
+    * [Game of Life](/leetcode/algorithms/game-of-life)
     * [Kth Largest Element](/leetcode/algorithms/kth-largest-element)
     * [N-Queens II](/leetcode/algorithms/n-queens-ii)

@@ -66,6 +66,7 @@ Python 3. Each solution passes all test cases unless otherwise stated.
 4. [LeetCode](/leetcode)
   - [Algorithms](/leetcode/algorithms)
     * [Game of Life](/leetcode/algorithms/game-of-life)
+    * [K Pairs with Smallest Sums](/leetcode/algorithms/k-pairs-with-smallest-sums)
     * [Kth Largest Element](/leetcode/algorithms/kth-largest-element)
     * [Median of Two Sorted Arrays](/leetcode/algorithms/median-of-two-sorted-arrays)
     * [N-Queens II](/leetcode/algorithms/n-queens-ii)

@@ -71,3 +71,4 @@ Python 3. Each solution passes all test cases unless otherwise stated.
     * [Median of Two Sorted Arrays](/leetcode/algorithms/median-of-two-sorted-arrays)
     * [N-Queens II](/leetcode/algorithms/n-queens-ii)
     * [Range Sum Query - Mutable](/leetcode/algorithms/range-sum-query-mutable)
+    * [Set Matrix Zeroes](/leetcode/algorithms/set-matrix-zeroes)

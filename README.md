@@ -72,3 +72,7 @@ Python 3. Each solution passes all test cases unless otherwise stated.
     * [N-Queens II](/leetcode/algorithms/n-queens-ii)
     * [Range Sum Query - Mutable](/leetcode/algorithms/range-sum-query-mutable)
     * [Set Matrix Zeroes](/leetcode/algorithms/set-matrix-zeroes)
+4. [CTCI](/ctci)
+  - [Data Structures](/ctci/data-structures)
+    - [Arrays and Strings](/ctci/data-structures/arrays-and-strings)
+      * [Is Rotation (1.8)](/ctci/data-structures/arrays-and-strings/is-rotation)

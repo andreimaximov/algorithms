@@ -73,7 +73,3 @@ Python 3. Each solution passes all test cases unless otherwise stated.
     * [Range Sum Query - Mutable](/leetcode/algorithms/range-sum-query-mutable)
     * [Rotate Image](/leetcode/algorithms/rotate-image)
     * [Set Matrix Zeroes](/leetcode/algorithms/set-matrix-zeroes)
-4. [CTCI](/ctci)
-  - [Data Structures](/ctci/data-structures)
-    - [Arrays and Strings](/ctci/data-structures/arrays-and-strings)
-      * [Is Rotation (1.8)](/ctci/data-structures/arrays-and-strings/is-rotation)

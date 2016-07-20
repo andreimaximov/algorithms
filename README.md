@@ -76,3 +76,4 @@ Python 3. Each solution passes all test cases unless otherwise stated.
     * [Rotate Image](/leetcode/algorithms/rotate-image)
     * [Set Matrix Zeroes](/leetcode/algorithms/set-matrix-zeroes)
     * [Sorted Array to BST](/leetcode/algorithms/sorted-array-to-bst)
+    * [Validate BST](/leetcode/algorithms/validate-bst)

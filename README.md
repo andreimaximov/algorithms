@@ -65,6 +65,7 @@ Python 3. Each solution passes all test cases unless otherwise stated.
     * [nCr Table](/mathematics/combinatorics/ncr-table)
 4. [LeetCode](/leetcode)
   - [Algorithms](/leetcode/algorithms)
+    * [Edit Distance](/leetcode/algorithms/edit-distance)
     * [Game of Life](/leetcode/algorithms/game-of-life)
     * [Is Balanced](/leetcode/algorithms/is-balanced)
     * [K Pairs with Smallest Sums](/leetcode/algorithms/k-pairs-with-smallest-sums)

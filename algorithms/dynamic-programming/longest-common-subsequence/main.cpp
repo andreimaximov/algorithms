@@ -1,65 +1,82 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include <iterator>
 
-typedef std::vector<std::vector<int>> matrix;
-
-std::vector<int> build(int length) {
-  std::vector<int> sequence(length);
-  for (size_t i = 0; i < length; ++i) {
-    std::cin >> sequence[i];
+std::vector<int> load_stream(std::istream &in, int n) { // NOLINT
+  std::vector<int> sequence(n);
+  for (auto it = sequence.begin(); it != sequence.end(); it++) {
+    in >> *it;
   }
   return sequence;
 }
 
-matrix _lcs(const std::vector<int>& a, const std::vector<int>& b) {
-  int n = a.size() + 1;
-  int m = b.size() + 1;
-  matrix cache(n, std::vector<int>(m, 0));
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < m; j++) {
-      if (i == 0 || j == 0) {
-        cache[i][j] = 0;
-      } else if (a[i - 1] == b[j - 1]) {
-        cache[i][j] = cache[i - 1][j - 1] + 1;
+//
+// Finds the LCS of sequences a and b using a precalculated DP array where each
+// dp[i][j] resembles LCS of a[:i] and b[:j]. The algorithm starts at the last
+// characters of a and b, traverses back following largest LCS, and adds
+// characters where a[i] == b[j] to path.
+//
+template<typename T>
+std::vector<T> get_path(const std::vector<T> &a, const std::vector<T> &b,
+                        const std::vector<std::vector<size_t>> &dp) {
+  size_t n = a.size();
+  size_t m = b.size();
+  size_t i = dp[n][m];
+  std::vector<T> path(i);
+  while (n > 0 && m > 0) {
+    if (a[n - 1] == b[m - 1]) {
+      path[--i] = a[n - 1];
+      n--;
+      m--;
+    } else if (dp[n - 1][m]  > dp[n][m - 1]) {
+      n--;
+    } else {
+      m--;
+    }
+  }
+  return path;
+}
+
+//
+// Returns the LCS of sequences a and b.
+//
+template<typename T>
+std::vector<T> lcs(const std::vector<T> &a, const std::vector<T> &b) {
+  size_t n = a.size() + 1;
+  size_t m = b.size() + 1;
+  std::vector<std::vector<size_t>> dp(n, std::vector<size_t>(m, 0));
+
+  //
+  // Run DP using f(a, b):
+  //
+  // 1. f(a, b) = 1 + f(a[:-1], b[:-1]) if a[-1] == b[-1]
+  // 2. f(a, b) = Max(f(a[:-1], b), f(a, b[:-1])) if a[-1] != b[-1]
+  //
+  for (size_t i = 1; i < n; i++) {
+    for (size_t j = 1; j < m; j++) {
+      if (a[i - 1] == b[j - 1]) {
+        dp[i][j] = 1 + dp[i - 1][j - 1];
       } else {
-        cache[i][j] = std::max(cache[i][j - 1],  cache[i - 1][j]);
+        dp[i][j] = std::max(dp[i][j - 1], dp[i - 1][j]);
       }
     }
   }
-  return cache;
-}
 
-std::vector<int> lcs(const std::vector<int>& a, const std::vector<int>& b) {
-  matrix cache = _lcs(a, b);
-  int n = a.size();
-  int m = b.size();
-  int index = cache[n][m];
-
-  std::vector<int> subseq(index);
-
-  while (n > 0 && m > 0) {
-    if (a[n - 1] == b[m - 1]) {
-      subseq[--index] = a[n - 1];
-      --n; --m;
-    } else if (cache[n - 1][m] > cache[n][m - 1]) {
-      --n;
-    } else {
-      --m;
-    }
-  }
-
-  return subseq;
+  return get_path(a, b, dp);
 }
 
 int main() {
-  int n, m;
+  // Load sequences.
+  size_t n, m;
   std::cin >> n >> m;
-  std::vector<int> a = build(n);
-  std::vector<int> b = build(m);
+  std::vector<int> a = load_stream(std::cin, n);
+  std::vector<int> b = load_stream(std::cin, m);
 
-  std::vector<int> subseq = lcs(a, b);
-  std::ostream_iterator<int> out(std::cout, " ");
-  std::copy(subseq.begin(), subseq.end(), out);
+  // Calculate and print LCS.
+  std::vector<int> sequence = lcs(a, b);
+  std::copy(sequence.begin(), sequence.end(),
+            std::ostream_iterator<int>(std::cout, " "));
+  std::cout << std::endl;
   return 0;
 }

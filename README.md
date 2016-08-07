@@ -79,5 +79,6 @@ Python 3. Each solution passes all test cases unless otherwise stated.
     * [Regular Expression Matching](/leetcode/algorithms/regular-expression-matching)
     * [Rotate Image](/leetcode/algorithms/rotate-image)
     * [Set Matrix Zeroes](/leetcode/algorithms/set-matrix-zeroes)
+    * [Skyline](/leetcode/algorithms/skyline)
     * [Sorted Array to BST](/leetcode/algorithms/sorted-array-to-bst)
     * [Validate BST](/leetcode/algorithms/validate-bst)

@@ -82,4 +82,5 @@ Python 3. Each solution passes all test cases unless otherwise stated.
     * [Set Matrix Zeroes](/leetcode/algorithms/set-matrix-zeroes)
     * [Skyline](/leetcode/algorithms/skyline)
     * [Sorted Array to BST](/leetcode/algorithms/sorted-array-to-bst)
+    * [Stock Profit IV](/leetcode/algorithms/stock-profit-iv)
     * [Validate BST](/leetcode/algorithms/validate-bst)

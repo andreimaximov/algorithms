@@ -55,7 +55,8 @@ public class Solution {
       if (lo >= hi) break;
       swap(nums, lo, hi);
     }
-    // Move pivot element back to center...
+    // Move pivot element back to center to ensure the pivot value can
+    // be accessed at nums[lo]...
     swap(nums, lo, end);
     return lo;
   }

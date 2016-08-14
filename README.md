@@ -1,8 +1,9 @@
 # README
 
-This is a collection of my [HackerRank](https://www.hackerrank.com) and
-[LeetCode](https://leetcode.com) challenge solutions written in C++, Java, and
-Python 3. Each solution passes all test cases unless otherwise stated.
+This is a collection of my [HackerRank](https://www.hackerrank.com),
+[LeetCode](https://leetcode.com), and [Geeks for Geeks](http://www.geeksforgeeks.org)
+problem solutions written in C++, Java, and Python 3. Each solution passes
+all test cases unless otherwise stated.
 
 ## Index
 
@@ -84,3 +85,6 @@ Python 3. Each solution passes all test cases unless otherwise stated.
     * [Sorted Array to BST](/leetcode/algorithms/sorted-array-to-bst)
     * [Stock Profit IV](/leetcode/algorithms/stock-profit-iv)
     * [Validate BST](/leetcode/algorithms/validate-bst)
+4. [Geeks for Geeks](/geeks-for-geeks)
+  - [Dynamic Programming](/geeks-for-geeks/dynamic-programming)
+    * [Set 18 - Partition Problem](/geeks-for-geeks/dynamic-programming/set-18-partition-problem)

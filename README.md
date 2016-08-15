@@ -73,6 +73,7 @@ all test cases unless otherwise stated.
     * [K Pairs with Smallest Sums](/leetcode/algorithms/k-pairs-with-smallest-sums)
     * [Kth Largest Element](/leetcode/algorithms/kth-largest-element)
     * [LCA of a Binary Tree](/leetcode/algorithms/lca-binary-tree)
+    * [Majority Element II](/leetcode/algorithms/majority-element-ii)
     * [Max Points on a Line](/leetcode/algorithms/max-points-on-a-line)
     * [Median of Two Sorted Arrays](/leetcode/algorithms/median-of-two-sorted-arrays)
     * [N-Queens II](/leetcode/algorithms/n-queens-ii)

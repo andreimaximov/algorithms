@@ -84,6 +84,7 @@ all test cases unless otherwise stated.
     * [Set Matrix Zeroes](/leetcode/algorithms/set-matrix-zeroes)
     * [Skyline](/leetcode/algorithms/skyline)
     * [Sorted Array to BST](/leetcode/algorithms/sorted-array-to-bst)
+    * [Spiral Matrix](/leetcode/algorithms/spiral-matrix)
     * [Stock Profit IV](/leetcode/algorithms/stock-profit-iv)
     * [Validate BST](/leetcode/algorithms/validate-bst)
 4. [Geeks for Geeks](/geeks-for-geeks)

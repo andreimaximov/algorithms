@@ -78,6 +78,7 @@ all test cases unless otherwise stated.
     * [N-Queens II](/leetcode/algorithms/n-queens-ii)
     * [Palindrome Linked List](/leetcode/algorithms/palindrome-linked-list)
     * [Range Sum Query - Mutable](/leetcode/algorithms/range-sum-query-mutable)
+    * [Rectangle Area](/leetcode/algorithms/rectangle-area)
     * [Regular Expression Matching](/leetcode/algorithms/regular-expression-matching)
     * [Rotate Image](/leetcode/algorithms/rotate-image)
     * [Set Matrix Zeroes](/leetcode/algorithms/set-matrix-zeroes)

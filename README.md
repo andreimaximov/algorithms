@@ -67,6 +67,7 @@ all test cases unless otherwise stated.
     * [nCr Table](/mathematics/combinatorics/ncr-table)
 4. [LeetCode](/leetcode)
   - [Algorithms](/leetcode/algorithms)
+    * [Construct Binary Tree from Preorder and Inorder Traversal](/leetcode/algorithms/binary-tree-inorder-preorder)
     * [Edit Distance](/leetcode/algorithms/edit-distance)
     * [Game of Life](/leetcode/algorithms/game-of-life)
     * [Is Balanced](/leetcode/algorithms/is-balanced)

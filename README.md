@@ -88,6 +88,7 @@ all test cases unless otherwise stated.
     * [Rotate Image](/leetcode/algorithms/rotate-image)
     * [Set Matrix Zeroes](/leetcode/algorithms/set-matrix-zeroes)
     * [Skyline](/leetcode/algorithms/skyline)
+    * [Shortest Palindrome](/leetcode/algorithms/shortest-palindrome)
     * [Sorted Array to BST](/leetcode/algorithms/sorted-array-to-bst)
     * [Spiral Matrix](/leetcode/algorithms/spiral-matrix)
     * [Stock Profit IV](/leetcode/algorithms/stock-profit-iv)

@@ -94,6 +94,7 @@ all test cases unless otherwise stated.
     * [Sorted Array to BST](/leetcode/algorithms/sorted-array-to-bst)
     * [Spiral Matrix](/leetcode/algorithms/spiral-matrix)
     * [Stock Profit IV](/leetcode/algorithms/stock-profit-iv)
+    * [Subsets II](/leetcode/algorithms/subsets-ii)
     * [Validate BST](/leetcode/algorithms/validate-bst)
 4. [Geeks for Geeks](/geeks-for-geeks)
   - [Dynamic Programming](/geeks-for-geeks/dynamic-programming)

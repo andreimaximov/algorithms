@@ -70,6 +70,7 @@ all test cases unless otherwise stated.
     * [Preorder and Inorder Traversal](/leetcode/algorithms/binary-tree-inorder-preorder)
     * [Postorder and Inorder Traversal](/leetcode/algorithms/binary-tree-inorder-postorder)
     * [Contains Duplicate III](/leetcode/algorithms/contains-duplicate-iii)
+    * [Difference Ways to Add Parenthesis](/leetcode/algorithms/different-ways-to-add-parenthesis)
     * [Edit Distance](/leetcode/algorithms/edit-distance)
     * [Game of Life](/leetcode/algorithms/game-of-life)
     * [Is Balanced](/leetcode/algorithms/is-balanced)

@@ -76,6 +76,7 @@ all test cases unless otherwise stated.
     * [Is Balanced](/leetcode/algorithms/is-balanced)
     * [K Pairs with Smallest Sums](/leetcode/algorithms/k-pairs-with-smallest-sums)
     * [Kth Largest Element](/leetcode/algorithms/kth-largest-element)
+    * [Largest Rectangle in Histogram](/leetcode/algorithms/largest-rectangle-in-histogram)
     * [LCA of a Binary Tree](/leetcode/algorithms/lca-binary-tree)
     * [Lexicographical Numbers](/leetcode/algorithms/lexicographical-numbers)
     * [Majority Element II](/leetcode/algorithms/majority-element-ii)

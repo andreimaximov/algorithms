@@ -1,97 +1,84 @@
 #!/usr/bin/env python
 
 import sys
-import queue
+from heapq import *
 
 
-class Vertex:
-    def __init__(self):
-        self.edges = {}
-
-    def get_edges(self):
-        return self.edges
-
-    def add_edge(self, value, distance):
-        if value not in self.edges or distance < self.edges[value]:
-            self.edges[value] = distance
+def read(fn):
+    return tuple(fn(i) for i in sys.stdin.readline().split(' '))
 
 
-class Graph:
-    def __init__(self, N):
-        self.vertices = {}
-        while (N > 0):
-            self.vertices[N] = Vertex()
-            N -= 1
+def load_graph(N, M):
+    """
+    Builds an adjacency list representation of a graph with N vertices. Each
+    graph[i][j] is the minimum length of an edge between vertice i and j.
 
-    def get_vertices(self):
-        return self.vertices
+    :rtype List[int, Dict[int, int]]
+    """
+    graph = [dict() for i in range(0, N)]
 
-    def get_vertex(self, value):
-        return self.vertices[value]
+    for i in range(0, M):
+        (x, y, r) = read(int)
+        x -= 1
+        y -= 1
 
-    def add_vertex(self, value, vertex):
-        self.vertices[value] = vertex
+        # Ignore all edges except minimum length edge.
+        r = r if y not in graph[x] else min(r, graph[x][y])
+        graph[x][y] = r
+        graph[y][x] = r
 
-
-class Dijkstra:
-    def __init__(self, graph):
-        self.graph = graph
-
-    def calculate(self, start):
-        solved = {start: 0}
-        adjacents = queue.PriorityQueue()
-        self.update_adjacents(start, solved, adjacents)
-        while not adjacents.empty():
-            (distance, value) = adjacents.get()
-            if value in solved:
-                continue
-            solved[value] = distance
-            self.update_adjacents(value, solved, adjacents)
-        return solved
-
-    def update_adjacents(self, parent, solved, adjacents):
-        edges = self.graph.get_vertex(parent).get_edges()
-        for value, distance in edges.items():
-            adjacents.put((solved[parent] + distance, value))
-
-
-def read_integers():
-    return [int(x) for x in sys.stdin.readline().split(" ")]
-
-
-def build_graph(N, M):
-    graph = Graph(N)
-    while (M > 0):
-        (x, y, R) = read_integers()
-        graph.get_vertex(x).add_edge(y, R)
-        graph.get_vertex(y).add_edge(x, R)
-        M -= 1
     return graph
 
 
-def print_distances(distances, N, S):
-    for i in range(1, N + 1):
-        if (i == S):
+def dijkstras(graph, source):
+    """
+    Runs Dijkstras on the graph starting at the source vertex. Returns a list
+    of distances from the source to all other nodes. Distance of -1 for a
+    vertex i indicates there is no path from source to i.
+
+    :rtype List[int]
+    """
+    q = []
+    heappush(q, (0, source))
+
+    distances = [-1] * len(graph)
+    distances[source] = 0
+
+    while len(q) > 0:
+        (distance, vertice) = heappop(q)
+
+        # Ignore this distance if a shorter path has been found for this node.
+        if distances[vertice] > 0:
             continue
-        distance = -1 if i not in distances else distances[i]
-        print(distance, end=" ")
-    print()
+        distances[vertice] = distance
+
+        # Queue up all unvisited neighbors.
+        for n in graph[vertice]:
+            if distances[n] > -1:
+                continue
+            cost = distance + graph[vertice][n]
+            heappush(q, (cost, n))
+
+    return distances
 
 
-def execute_test_case():
-    (N, M) = read_integers()
-    graph = build_graph(N, M)
-    dijkstra = Dijkstra(graph)
-    S = int(sys.stdin.readline())
-    distances = dijkstra.calculate(S)
-    print_distances(distances, N, S)
+def test():
+    (N, M) = read(int)
+    graph = load_graph(N, M)
+
+    S = read(int)[0] - 1
+    distances = dijkstras(graph, S)
+
+    for i in range(0, N):
+        if i != S:
+            end = ' ' if i < N - 1 else '\n'
+            print(distances[i], end=end)
 
 
 def main():
-    T = int(sys.stdin.readline())
-    while (T > 0):
-        execute_test_case()
-        T -= 1
+    T = read(int)[0]
+    for i in range(0, T):
+        test()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

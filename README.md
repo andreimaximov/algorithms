@@ -98,6 +98,7 @@ all test cases unless otherwise stated.
     * [Shortest Palindrome](leetcode/algorithms/shortest-palindrome)
     * [Sorted Array to BST](leetcode/algorithms/sorted-array-to-bst)
     * [Spiral Matrix](leetcode/algorithms/spiral-matrix)
+    * [Stock Profit III](leetcode/algorithms/stock-profit-iii)
     * [Stock Profit IV](leetcode/algorithms/stock-profit-iv)
     * [Subsets II](leetcode/algorithms/subsets-ii)
     * [Validate BST](leetcode/algorithms/validate-bst)

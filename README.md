@@ -87,6 +87,7 @@ all test cases unless otherwise stated.
     * [Palindrome Linked List](leetcode/algorithms/palindrome-linked-list)
     * [Palindrome Pairs](leetcode/algorithms/palindrome-pairs)
     * [Range Sum Query - Mutable](leetcode/algorithms/range-sum-query-mutable)
+    * [Recover Binary Tree](leetcode/algorithm/recover-binary-tree)
     * [Rectangle Area](leetcode/algorithms/rectangle-area)
     * [Regular Expression Matching](leetcode/algorithms/regular-expression-matching)
     * [Remove Duplicates from Sorted Array II](leetcode/algorithms/remove-duplicates-from-sorted-array-ii)

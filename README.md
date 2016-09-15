@@ -104,6 +104,7 @@ all test cases unless otherwise stated.
     * [Stock Profit IV](leetcode/algorithms/stock-profit-iv)
     * [Subsets II](leetcode/algorithms/subsets-ii)
     * [Validate BST](leetcode/algorithms/validate-bst)
+    * [Word Break](leetcode/algorithms/word-break)
 4. [Geeks for Geeks](geeks-for-geeks)
   - [Dynamic Programming](geeks-for-geeks/dynamic-programming)
     * [Set 18 - Partition Problem](geeks-for-geeks/dynamic-programming/set-18-partition-problem)

@@ -70,6 +70,7 @@ all test cases unless otherwise stated.
     * [Preorder and Inorder Traversal](leetcode/algorithms/binary-tree-inorder-preorder)
     * [Postorder and Inorder Traversal](leetcode/algorithms/binary-tree-inorder-postorder)
     * [Binary Tree Zigzag Level Order Traversal](leetcode/algorithms/binary-tree-zigzag-level-order)
+    * [Container With Most Water](leetcode/algorithms/container-with-most-water)
     * [Contains Duplicate III](leetcode/algorithms/contains-duplicate-iii)
     * [Difference Ways to Add Parenthesis](leetcode/algorithms/different-ways-to-add-parenthesis)
     * [Edit Distance](leetcode/algorithms/edit-distance)

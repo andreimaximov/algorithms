@@ -1,4 +1,5 @@
 out
 *.class
 __pycache__
+*.swp
 

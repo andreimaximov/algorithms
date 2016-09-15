@@ -69,6 +69,7 @@ all test cases unless otherwise stated.
   - [Algorithms](leetcode/algorithms)
     * [Preorder and Inorder Traversal](leetcode/algorithms/binary-tree-inorder-preorder)
     * [Postorder and Inorder Traversal](leetcode/algorithms/binary-tree-inorder-postorder)
+    * [Binary Tree Maximum Path Sum](leetcode/algorithms/binary-tree-max-path-sum)
     * [Binary Tree Zigzag Level Order Traversal](leetcode/algorithms/binary-tree-zigzag-level-order)
     * [Container With Most Water](leetcode/algorithms/container-with-most-water)
     * [Contains Duplicate III](leetcode/algorithms/contains-duplicate-iii)

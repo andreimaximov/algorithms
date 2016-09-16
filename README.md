@@ -67,6 +67,7 @@ all test cases unless otherwise stated.
     * [nCr Table](mathematics/combinatorics/ncr-table)
 4. [LeetCode](leetcode)
   - [Algorithms](leetcode/algorithms)
+    * [4Sum](leetcode/algorithms/4sum)
     * [Preorder and Inorder Traversal](leetcode/algorithms/binary-tree-inorder-preorder)
     * [Postorder and Inorder Traversal](leetcode/algorithms/binary-tree-inorder-postorder)
     * [Binary Tree Maximum Path Sum](leetcode/algorithms/binary-tree-max-path-sum)

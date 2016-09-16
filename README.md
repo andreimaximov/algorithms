@@ -75,6 +75,7 @@ all test cases unless otherwise stated.
     * [Contains Duplicate III](leetcode/algorithms/contains-duplicate-iii)
     * [Difference Ways to Add Parenthesis](leetcode/algorithms/different-ways-to-add-parenthesis)
     * [Edit Distance](leetcode/algorithms/edit-distance)
+    * [Flatten Binary Tree to Linked List](leetcode/algorithms/flatten-binary-tree)
     * [Game of Life](leetcode/algorithms/game-of-life)
     * [Is Balanced](leetcode/algorithms/is-balanced)
     * [K Pairs with Smallest Sums](leetcode/algorithms/k-pairs-with-smallest-sums)

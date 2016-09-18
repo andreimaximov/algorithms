@@ -88,6 +88,7 @@ all test cases unless otherwise stated.
     * [Majority Element II](leetcode/algorithms/majority-element-ii)
     * [Max Points on a Line](leetcode/algorithms/max-points-on-a-line)
     * [Median of Two Sorted Arrays](leetcode/algorithms/median-of-two-sorted-arrays)
+    * [Mini Parser](leetcode/algorithms/mini-parser)
     * [Minimum Height Tree](leetcode/algorithms/minimum-height-tree)
     * [N-Queens II](leetcode/algorithms/n-queens-ii)
     * [Palindrome Linked List](leetcode/algorithms/palindrome-linked-list)

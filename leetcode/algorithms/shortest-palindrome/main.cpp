@@ -38,46 +38,68 @@ class Solution {
 
  private:
   //
-  // Uses a Knuth–Morris–Pratt algorithm table to find the longest prefix of
-  // the string that is also a suffix. See the following link for an
-  // explanation for how the table works.
+  // Uses a Knuth–Morris–Pratt algorithm table to find the longest proper
+  // prefix of the string that is also a proper suffix. See the following link
+  // for an explanation for how the table works.
+  //
+  // Terms:
+  //
+  // - PP = Proper prefix
+  // - PS = Proper suffix
   //
   // http://jakeboxer.com/blog/2009/12/13/the-knuth-morris-pratt-algorithm-in-my-own-words/
   //
   std::vector<size_t> kmp(const std::string &source) {
     size_t n = source.size();
+
+    // Each index i in the table stores the length of the longest PP that is
+    // aos a PS in source[0:i + 1].
     std::vector<size_t> table(n);
 
-    // Track the last index in the prefix that we need to check if it matches
-    // with the last index in the suffix.
+    // Tracks the length of the last longest PP. We need to check if the
+    // character after this PP matches the end of the current sub-string to
+    // extend it.
     size_t prefix_index = 0;
 
-    // Go through all sub-strings source[0:suffix_index + 1] and find the
-    // longest prefix that is also a prefix for each.
+    // Go through all sub-strings source[0:{1 ... n}] and find the longest
+    // PP that is also a PS of each sub-string.
     for (size_t suffix_index = 1; suffix_index < n; suffix_index++) {
       if (source[prefix_index] == source[suffix_index]) {
-        // Last characters of prefix and suffix match so just increment length
-        // of previous sub-string solution!
+        // Character after last longest PP and end of current sub-string match
+        // so just increment length of previous sub-string solution!
         table[suffix_index] = table[suffix_index - 1] + 1;
         prefix_index++;
       } else {
-        // Last characters of prefix and suffix do not match. What we need to
-        // do is find the longest prefix that is both (1) a suffix of the
+        // Last characters of candidate PP and PS do not match. What we need to
+        // do is find the longest PP that is both (1) a PS of the
         // previous sub-string and (2) is followed by the last character of
         // the current sub-string which is denoted by source[suffix_index].
 
-        // Index of the character after the longest prefix that is a suffix of
-        // the previous sub-string.
+        // Index of the character after the longest PP that is a PS of the
+        // previous sub-string.
         prefix_index = table[suffix_index - 1];
 
-        // Continue until we find a prefix that matches our conditions or no
-        // such prefix exists.
+        // Continue until we find a PP that matches our conditions or no
+        // such PP exists.
         while (prefix_index > 0 &&
                source[prefix_index] != source[suffix_index]) {
           // At the beginning of this loop iteration we are guaranteed that
-          // source[0:prefix_index + 1] is a prefix and suffix of the previous
-          // sub-string. Resolving this problem for source[0:prefix_index]
-          // maintains this loop invariant.
+          // source[0:prefix_index + 1] is a PP and PS of the previous
+          // sub-string source[0:suffix_index].
+          //
+          // Resolving this problem for source[0:prefix_index] maintains the
+          // loop invariant. Proof:
+          //
+          // Let's say A is the current string and A' is the previous string.
+          //
+          // Then A' = A[:-1]
+          //
+          // Call B the longest PP and PS of A'. This means A' = B + X + B. Say
+          // C is the longest PP and PS of B. This means B = C + Y + C.
+          //
+          // Substituting for B we can say that A' = C + X + C + Y + C + X + C.
+          // We can see that C is still a PP and PS of A'. Thus the invariant
+          // holds.
           prefix_index = table[prefix_index - 1];
         }
 
@@ -86,7 +108,8 @@ class Solution {
           prefix_index++;
         }
 
-        // Save the result for sub-string source[0:suffix_index + 1].
+        // Save the longest PP and PS for the current sub-string
+        // source[0:suffix_index + 1].
         table[suffix_index] = prefix_index;
       }
     }

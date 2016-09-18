@@ -97,6 +97,7 @@ all test cases unless otherwise stated.
     * [Rectangle Area](leetcode/algorithms/rectangle-area)
     * [Regular Expression Matching](leetcode/algorithms/regular-expression-matching)
     * [Remove Duplicates from Sorted Array II](leetcode/algorithms/remove-duplicates-from-sorted-array-ii)
+    * [Remove K Digits](leetcode/algorithms/remove-k-digits)
     * [Reverse Nodes in k-Group](leetcode/algorithms/reverse-nodes-k-group)
     * [Reverse Words in a String](leetcode/algorithms/reverse-words-in-a-string)
     * [Rotate Image](leetcode/algorithms/rotate-image)

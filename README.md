@@ -91,6 +91,7 @@ all test cases unless otherwise stated.
     * [Median of Two Sorted Arrays](leetcode/algorithms/median-of-two-sorted-arrays)
     * [Mini Parser](leetcode/algorithms/mini-parser)
     * [Minimum Height Tree](leetcode/algorithms/minimum-height-tree)
+    * [Minimum Window Substring](leetcode/algorithms/minimum-window-substring)
     * [N-Queens II](leetcode/algorithms/n-queens-ii)
     * [Palindrome Linked List](leetcode/algorithms/palindrome-linked-list)
     * [Palindrome Pairs](leetcode/algorithms/palindrome-pairs)

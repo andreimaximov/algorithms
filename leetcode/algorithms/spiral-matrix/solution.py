@@ -37,7 +37,7 @@ class Solution(object):
             # Check if the current delta will result in revisting a cell.
             nextr = (r + dr) % n
             nextc = (c + dc) % m
-            if matrix[nextr][nextc] == None:
+            if matrix[nextr][nextc] is None:
                 dr, dc = dc, -dr  # Turn right.
 
             # Go to next cell.

@@ -40,9 +40,46 @@ public class Solution {
 
   //
   // Partitions the nums array around a pivot index and returns the index of
-  // the pivot index.
+  // the pivot element in the partitioned array.
   //
   private int partition(int[] nums, int lo, int hi, int pivot) {
+    assert lo >= 0;
+    assert hi < nums.length;
+    assert lo <= hi;
+
+    // Store the value to pivot around.
+    int around = nums[pivot];
+
+    // i is the index of the first value in the range greater than nums[pivot].
+    int i = lo;
+
+    // Move the pivot value to the end.
+    swap(nums, pivot, hi);
+
+    // Process each value j. In each iteration nums[lo:j] is kept partitioned.
+    for (int j = lo; j < hi; j++) {
+      int n = nums[j];
+      if (n >= around) {
+        // n >= around so it is correctly on the right side of nums[lo:j + 1].
+        continue;
+      }
+      // n < around so swap it with the first element in nums[lo:j] >= around.
+      swap(nums, i, j);
+      i++;
+    }
+
+    // Move pivot value to i so that it is at the returned index.
+    swap(nums, i, hi);
+    return i;
+  }
+
+  //
+  // Partitions the nums array around a pivot index and returns the index of
+  // the pivot index. Marked as deprecated because for me the above
+  // partition(...) method is easier to handle edge cases with.
+  //
+  @Deprecated
+  private int partitionQuicksort(int[] nums, int lo, int hi, int pivot) {
     // Store the element to pivot around...
     int around = nums[pivot];
     // Move the pivot element to the end...

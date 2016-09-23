@@ -76,6 +76,7 @@ all test cases unless otherwise stated.
     * [Contains Duplicate III](leetcode/algorithms/contains-duplicate-iii)
     * [Data Stream as Disjoint Intervals](leetcode/algorithms/data-stream-disjoint-intervals)
     * [Difference Ways to Add Parenthesis](leetcode/algorithms/different-ways-to-add-parenthesis)
+    * [Dungeon Game](leetcode/algorithms/dungeon-game)
     * [Edit Distance](leetcode/algorithms/edit-distance)
     * [Flatten Binary Tree to Linked List](leetcode/algorithms/flatten-binary-tree)
     * [Game of Life](leetcode/algorithms/game-of-life)

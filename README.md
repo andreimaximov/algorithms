@@ -97,6 +97,7 @@ all test cases unless otherwise stated.
     * [N-Queens II](leetcode/algorithms/n-queens-ii)
     * [Palindrome Linked List](leetcode/algorithms/palindrome-linked-list)
     * [Palindrome Pairs](leetcode/algorithms/palindrome-pairs)
+    * [Permutations II](leetcode/algorithms/permutations-ii)
     * [Range Sum Query - Mutable](leetcode/algorithms/range-sum-query-mutable)
     * [Recover Binary Tree](leetcode/algorithm/recover-binary-tree)
     * [Rectangle Area](leetcode/algorithms/rectangle-area)

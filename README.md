@@ -120,6 +120,7 @@ all test cases unless otherwise stated.
     * [Subsets II](leetcode/algorithms/subsets-ii)
     * [Substring with Concatenation of All Words](leetcode/algorithms/substring-concat-all-words)
     * [Validate BST](leetcode/algorithms/validate-bst)
+    * [Wildcard Matching](leetcode/algorithms/wildcard-matching)
     * [Word Break](leetcode/algorithms/word-break)
 4. [Geeks for Geeks](geeks-for-geeks)
   - [Dynamic Programming](geeks-for-geeks/dynamic-programming)

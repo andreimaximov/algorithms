@@ -65,6 +65,7 @@ all test cases unless otherwise stated.
     * [Choose and Calculate](mathematics/combinatorics/choose-and-calculate)
     * [Journey to Mars](mathematics/combinatorics/journey-to-mars)
     * [nCr Table](mathematics/combinatorics/ncr-table)
+    * [Rank of a Word](mathematics/combinatorics/rank-of-a-word)
 4. [LeetCode](leetcode)
   - [Algorithms](leetcode/algorithms)
     * [4Sum](leetcode/algorithms/4sum)

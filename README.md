@@ -92,6 +92,7 @@ all test cases unless otherwise stated.
     * [Linked List Cycle II](leetcode/algorithms/linked-list-cycle-ii)
     * [Majority Element II](leetcode/algorithms/majority-element-ii)
     * [Max Points on a Line](leetcode/algorithms/max-points-on-a-line)
+    * [Maximum Gap](leetcode/algorithms/maximum-gap)
     * [Median of Two Sorted Arrays](leetcode/algorithms/median-of-two-sorted-arrays)
     * [Mini Parser](leetcode/algorithms/mini-parser)
     * [Minimum Height Tree](leetcode/algorithms/minimum-height-tree)

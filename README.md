@@ -129,3 +129,5 @@ all test cases unless otherwise stated.
 4. [Geeks for Geeks](geeks-for-geeks)
   - [Dynamic Programming](geeks-for-geeks/dynamic-programming)
     * [Set 18 - Partition Problem](geeks-for-geeks/dynamic-programming/set-18-partition-problem)
+  - [Mathematics](geeks-for-geeks/mathematics)
+    * [Weighted Random Generator](geeks-for-geeks/mathematics/weighted-random-generator)

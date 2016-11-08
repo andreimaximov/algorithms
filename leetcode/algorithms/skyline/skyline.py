@@ -28,36 +28,29 @@ class Solution(object):
 
         return self.getSkyline_(buildings, 0, len(buildings) - 1)
 
-    def cleanSkyline_(self, skyline):
+    def getSkyline_(self, buildings, lo, hi):
         """
-        Cleans the skyline by removing redundant points.
-
-        :type skyline: List[(int, int)]
+        :type buildings: List[List[int]]
+        :type lo: int
+        :type hi: int
         :rtype: List[(int, int)]
         """
+        assert lo >= 0
+        assert hi < len(buildings)
+        assert lo <= hi
 
-        if len(skyline) == 0:
-            return list()
+        if lo == hi:
+            # Return countour for a single building
+            b = buildings[lo]
+            return [(b[0], b[2]), (b[1], 0)]
 
-        # Initialize clean skyline
-        clean = [skyline[0]]
+        # Solve left and right sub-problems separately
+        mid = lo + (hi - lo) // 2
+        left = self.getSkyline_(buildings, lo, mid)
+        right = self.getSkyline_(buildings, mid + 1, hi)
 
-        for i in range(1, len(skyline)):
-            # Check if two points share vertical
-            if skyline[i][0] == clean[-1][0]:
-                # Grab highest y coordinate
-                y = max(skyline[i][1], clean[-1][1])
-                clean[-1] = (clean[-1][0], y)
-            # Check if two points share horizontal
-            elif skyline[i][1] == clean[-1][1]:
-                # Grab left most x coordinate
-                x = min(skyline[i][0], clean[-1][0])
-                clean[-1] = (x, clean[-1][1])
-            # Otherwise just append this point
-            else:
-                clean.append(skyline[i])
-
-        return clean
+        # Merge solutions
+        return self.mergeSkylines_(left, right)
 
     def mergeSkylines_(self, left, right):
         """
@@ -77,55 +70,36 @@ class Solution(object):
 
         skyline = list()
 
-        # Traverse points from left to right
-        while l < len(left) and r < len(right):
-            point = None
+        def add(x, height):
+            if len(skyline) > 0 and skyline[-1][1] == height:
+                return
+            skyline.append((x, height))
 
-            if left[l][0] < right[r][0]:  # Next point is in left skyline
+        # Traverse skylines in paralle from left to right.
+        while l < len(left) or r < len(right):
+            if r >= len(right) or l < len(left) and left[l][0] < right[r][0]:
+                # Either we are done with the right skyline or the next point
+                # on the left is before the next point on the right.
                 lh = left[l][1]
-                h = max(lh, rh)
-                point = (left[l][0], h)
+                x = left[l][0]
                 l += 1
-            elif left[l][0] > right[r][0]:  # Next point is in right skyline
+            elif l >= len(left) or r < len(right) and left[l][0] > right[r][0]:
+                # Either we are done with the left skyline or the next point on
+                # the right is before the next point on the left.
                 rh = right[r][1]
-                h = max(lh, rh)
-                point = (right[r][0], h)
+                x = right[r][0]
                 r += 1
-            else:  # Next points have same x coordinate (Share vertical edge)
+            else:
+                # Next points in each skyline have same x.
                 lh = left[l][1]
                 rh = right[r][1]
-                h = max(lh, rh)
-                point = (right[r][0], h)
+                x = left[l][0] if l < len(left) else right[r][0]
                 l += 1
                 r += 1
 
-            skyline.append(point)
+            add(x, max(lh, rh))
 
-        # Append left-over points
-        skyline.extend(left[l:])
-        skyline.extend(right[r:])
-
-        return self.cleanSkyline_(skyline)
-
-    def getSkyline_(self, buildings, lo, hi):
-        """
-        :type buildings: List[List[int]]
-        :type lo: int
-        :type hi: int
-        :rtype: List[(int, int)]
-        """
-        if lo == hi:
-            # Return countour for a single building
-            building = buildings[lo]
-            return [(building[0], building[2]), (building[1], 0)]
-
-        # Solve left and right sub-problems separately
-        mid = lo + int((hi - lo) / 2)
-        left = self.getSkyline_(buildings, lo, mid)
-        right = self.getSkyline_(buildings, mid + 1, hi)
-
-        # Merge solutions
-        return self.mergeSkylines_(left, right)
+        return skyline
 
 
 def main():

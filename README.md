@@ -126,6 +126,7 @@ all test cases unless otherwise stated.
     * [Substring with Concatenation of All Words](leetcode/algorithms/substring-concat-all-words)
     * [Sudoku Solver](leetcode/algorithms/sudoku-solver)
     * [Validate BST](leetcode/algorithms/validate-bst)
+    * [Wiggle Subsequence](leetcode/algorithms/wiggle-subsequence)
     * [Wildcard Matching](leetcode/algorithms/wildcard-matching)
     * [Word Break](leetcode/algorithms/word-break)
 4. [Geeks for Geeks](geeks-for-geeks)

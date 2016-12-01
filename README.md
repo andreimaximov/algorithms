@@ -91,6 +91,7 @@ all test cases unless otherwise stated.
     * [Largest Rectangle in Histogram](leetcode/algorithms/largest-rectangle-in-histogram)
     * [LCA of a Binary Tree](leetcode/algorithms/lca-binary-tree)
     * [Lexicographical Numbers](leetcode/algorithms/lexicographical-numbers)
+    * [LFU Cache](leetcode/algorithms/lfu-cache)
     * [Linked List Cycle II](leetcode/algorithms/linked-list-cycle-ii)
     * [Longest Valid Parenthesis](leetcode/algorithms/longest-valid-parenthesis)
     * [Majority Element II](leetcode/algorithms/majority-element-ii)

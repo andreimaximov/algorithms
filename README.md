@@ -30,6 +30,7 @@ all test cases unless otherwise stated.
     * [Journey to the Moon](algorithms/graph-theory/journey-to-the-moon)
     * [Kruskal (MST): Really Special Subtree](algorithms/graph-theory/kruskal-mst-really-special-subtree)
     * [Prim's (MST): Special Subtree](algorithms/graph-theory/prims-mst-special-subtree)
+    * [SCC](algorithms/graph-theory/scc)
   - [Implementation](algorithms/implementation)
     * [Matrix Rotation](algorithms/implementation/matrix-rotation)
   - [Search](algorithms/search)

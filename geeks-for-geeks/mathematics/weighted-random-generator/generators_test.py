@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from generators import SegmentTreeGenerator, ArrayGenerator
+from generators import SegmentTreeGenerator, ArrayGenerator, DictGenerator
 
 SAMPLES = 250000
 
@@ -11,7 +11,8 @@ UPDATES = [('a', 2), ('b', 1), ('d', 10)]
 
 GENERATORS = [
     SegmentTreeGenerator,
-    ArrayGenerator
+    ArrayGenerator,
+    DictGenerator
 ]
 
 

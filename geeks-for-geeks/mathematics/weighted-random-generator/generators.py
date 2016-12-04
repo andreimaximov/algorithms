@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import random
+import functools
 from range_map import RangeMap
 
 
@@ -99,3 +100,47 @@ class ArrayGenerator(object):
             self.value = value
             self.offset = offset
             self.weight = weight
+
+
+class DictGenerator(object):
+    """
+    Returns random elements with a probability proportional to the frequency
+    distribution of each element in the population in O(N) time but weight
+    updates take O(1) time.
+    """
+    def __init__(self, population):
+        """
+        :type population: Dict[T, double]
+        """
+        self._population = dict(population)
+        self._total = functools.reduce(lambda s, key: population[key] + s,
+                                       population,
+                                       0)
+
+    def random(self):
+        """
+        Returns an element from the original population with probability
+        proportional to its relative frequency. O(N) time.
+
+        :rtype: T
+        """
+        i = random.random() * self._total
+        prefix = 0
+
+        for key in self._population:
+            prefix += self._population[key]
+            if prefix >= i:
+                return key
+
+        raise RuntimeError('This should never happen...')
+
+    def update(self, value, weight):
+        """
+        Updates the weight of the value in the population. O(1) time.
+        """
+        assert value in self._population
+        assert weight >= 0
+
+        current = self._population[value]
+        self._total += (weight - current)
+        self._population[value] = weight

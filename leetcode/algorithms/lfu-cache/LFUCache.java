@@ -193,8 +193,7 @@ public class LFUCache {
     if (!entries.containsKey(key)) {
       return -1;
     }
-    Entry entry = ping(key);
-    return entry.value;
+    return ping(key).value;
   }
 
   //

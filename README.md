@@ -129,6 +129,7 @@ all test cases unless otherwise stated.
     * [Subsets II](leetcode/algorithms/subsets-ii)
     * [Substring with Concatenation of All Words](leetcode/algorithms/substring-concat-all-words)
     * [Sudoku Solver](leetcode/algorithms/sudoku-solver)
+    * [Unique Substrings in Wraparound String](leetcode/algorithms/unique-substrings-wraparound-string)
     * [Validate BST](leetcode/algorithms/validate-bst)
     * [Wiggle Subsequence](leetcode/algorithms/wiggle-subsequence)
     * [Wildcard Matching](leetcode/algorithms/wildcard-matching)

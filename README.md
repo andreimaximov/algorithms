@@ -22,6 +22,7 @@ all test cases unless otherwise stated.
     * [Maximum Subarray](algorithms/dynamic-programming/maximum-subarray)
     * [Square Subsequences](algorithms/dynamic-programming/square-subsequences)
     * [Stock Maximize](algorithms/dynamic-programming/stock-maximize)
+    * [Summing Pieces](algorithms/dynamic-programming/summing-pieces)
   - [Graph Theory](algorithms/graph-theory)
     * [BFS: Shortest Reach](algorithms/graph-theory/bfs-shortest-reach)
     * [Dijkstra: Shortest Reach 2](algorithms/graph-theory/dijkstra-shortest-reach-2)

@@ -9,20 +9,11 @@ class Solution(object):
         """
         n = len(s)
 
-        # Create an index where all O(n^2) possible substrings begin.
-        index = dict()
-        for i in range(n):
-            for j in range(i, n):
-                x = s[i:j + 1]
-                if x not in index:
-                    index[x] = set()
-                index[x].add(i)
-
         # Each dp[i][j] reperesents the shortest encoding for s[i:j + 1].
         dp = [[None for _ in range(n)] for _ in range(n)]
-        return self.encodeUtil(s, 0, n - 1, index, dp)
+        return self.encodeUtil(s, 0, n - 1, dp)
 
-    def encodeUtil(self, s, i, j, index, dp):
+    def encodeUtil(self, s, i, j, dp):
         """Calculates the shortest encoding for s[i:j + 1].
 
         There are O(n^2) subproblems but each subproblem considers O(n) smaller
@@ -38,28 +29,33 @@ class Solution(object):
         encoding = s[i:j + 1]
 
         # Consider all repeating prefix substrings.
-        for k in range(i, j):
+        k = i
+        while k < j:
             # Count how many times x occurs back to back in s[i:j + 1].
             x = s[i:k + 1]
-            count = 1
-            start = i + len(x)
-            while start in index[x]:
+            y = self.encodeUtil(s, i, k, dp)
+            count = 0
+            start = i
+
+            while s[start:start + len(x)] == x:
                 count += 1
                 start += len(x)
 
-            # Compress the prefix.
-            x = self.encodeUtil(s, i, k, index, dp)
-            if count > 1:
-                prefix = '%d[%s]' % (count, x)
-            else:
-                prefix = x
+                # Compress the prefix.
+                prefix = y if count == 1 else '%d[%s]' % (count, y)
 
-            # Compress the suffix.
-            suffix = self.encodeUtil(s, start, j, index, dp)
+                # Compress the suffix.
+                suffix = self.encodeUtil(s, start, j, dp)
 
-            # Apply prefix and suffix if encoding with x as prefix is shorter.
-            if len(prefix) + len(suffix) < len(encoding):
-                encoding = prefix + suffix
+                # Apply if encoding with x as prefix is shorter.
+                if len(prefix) + len(suffix) < len(encoding):
+                    encoding = prefix + suffix
+
+            # This is critical for speedup! Essentially if we have a prefix x
+            # that repeats p times, we do not need to consider any prefixes
+            # formed by repeating x p times. Why? Because without this we will
+            # be performing unecessary (repeat) calls to get optimal suffix.
+            k = i + len(x) * count
 
         dp[i][j] = encoding
         return encoding

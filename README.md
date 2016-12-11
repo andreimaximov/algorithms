@@ -83,6 +83,7 @@ all test cases unless otherwise stated.
     * [Distinct Subsequences](leetcode/algorithms/distinct-subsequences)
     * [Dungeon Game](leetcode/algorithms/dungeon-game)
     * [Edit Distance](leetcode/algorithms/edit-distance)
+    * [Encode String with Shortest Length](leetcode/algorithms/encode-string-with-shortest-length)
     * [Flatten Binary Tree to Linked List](leetcode/algorithms/flatten-binary-tree)
     * [Game of Life](leetcode/algorithms/game-of-life)
     * [Gas Station](leetcode/algorithms/gas-station)

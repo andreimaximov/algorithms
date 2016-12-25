@@ -71,6 +71,7 @@ all test cases unless otherwise stated.
 4. [LeetCode](leetcode)
   - [Algorithms](leetcode/algorithms)
     * [4Sum](leetcode/algorithms/4sum)
+    * [Basic Calculator](leetcode/algorithms/basic-calculator)
     * [Preorder and Inorder Traversal](leetcode/algorithms/binary-tree-inorder-preorder)
     * [Postorder and Inorder Traversal](leetcode/algorithms/binary-tree-inorder-postorder)
     * [Binary Tree Maximum Path Sum](leetcode/algorithms/binary-tree-max-path-sum)

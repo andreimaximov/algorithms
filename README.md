@@ -43,6 +43,7 @@ all test cases unless otherwise stated.
     * [Pairs](algorithms/search/pairs)
     * [Playing With Numbers](algorithms/search/playing-with-numbers)
     * [Sherlock and Array](algorithms/search/sherlock-and-array)
+    * [Short Palindrome](algorithms/search/short-palindrome)
   - [Sorting](algorithms/sorting)
     * [Quicksort In-Place](algorithms/sorting/quicksort-in-place)
   - [Strings](algorithms/strings)

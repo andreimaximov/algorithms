@@ -141,6 +141,7 @@ all test cases unless otherwise stated.
     * [Word Break](leetcode/algorithms/word-break)
 5. [Codeforces](codeforces)
   - [750D New Year and Fireworks](codeforces/new-year-and-fireworks)
+  - [753B Interactive Bulls and Cows (Easy)](codeforces/interactive-bulls-and-cows-easy)
 6. [Geeks for Geeks](geeks-for-geeks)
   - [Dynamic Programming](geeks-for-geeks/dynamic-programming)
     * [Set 18 - Partition Problem](geeks-for-geeks/dynamic-programming/set-18-partition-problem)

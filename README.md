@@ -143,6 +143,7 @@ all test cases unless otherwise stated.
   - [750D New Year and Fireworks](codeforces/new-year-and-fireworks)
   - [753B Interactive Bulls and Cows (Easy)](codeforces/interactive-bulls-and-cows-easy)
   - [753C Interactive Bulls and Cows (Hard)](codeforces/interactive-bulls-and-cows-hard)
+  - [754D Fedor and Coupons](codeforces/fedor-and-coupons)
 6. [Geeks for Geeks](geeks-for-geeks)
   - [Dynamic Programming](geeks-for-geeks/dynamic-programming)
     * [Set 18 - Partition Problem](geeks-for-geeks/dynamic-programming/set-18-partition-problem)

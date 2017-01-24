@@ -1,9 +1,11 @@
 # README
 
 This is a collection of my [HackerRank](https://www.hackerrank.com),
-[LeetCode](https://leetcode.com), and [Geeks for Geeks](http://www.geeksforgeeks.org)
-problem solutions written in C++, Java, and Python 3. Each solution passes
-all test cases unless otherwise stated.
+[Codeforces](http://codeforces.com),
+[Geeks for Geeks](http://www.geeksforgeeks.org), and
+[LeetCode](https://leetcode.com) problem solutions in C++, Java, and Python 3.
+These are not meant to be competition style implementations but clean and
+easily understandable algorithms for learning purposes.
 
 ## Index
 
@@ -69,7 +71,21 @@ all test cases unless otherwise stated.
     * [Journey to Mars](mathematics/combinatorics/journey-to-mars)
     * [nCr Table](mathematics/combinatorics/ncr-table)
     * [Rank of a Word](mathematics/combinatorics/rank-of-a-word)
-4. [LeetCode](leetcode)
+4. [Codeforces](codeforces)
+  - [750D New Year and Fireworks](codeforces/new-year-and-fireworks)
+  - [753B Interactive Bulls and Cows (Easy)](codeforces/interactive-bulls-and-cows-easy)
+  - [753C Interactive Bulls and Cows (Hard)](codeforces/interactive-bulls-and-cows-hard)
+  - [754D Fedor and Coupons](codeforces/fedor-and-coupons)
+  - [758D Ability To Convert](codeforces/ability-to-convert)
+  - [758E Broken Tree](codeforces/broken-tree)
+5. [Geeks for Geeks](geeks-for-geeks)
+  - [Dynamic Programming](geeks-for-geeks/dynamic-programming)
+    * [Set 18 - Partition Problem](geeks-for-geeks/dynamic-programming/set-18-partition-problem)
+  - [Mathematics](geeks-for-geeks/mathematics)
+    * [Weighted Random Generator](geeks-for-geeks/mathematics/weighted-random-generator)
+  - [Linked List](geeks-for-geeks/linked-lists)
+    * [Flatten Multi Level Linked List](geeks-for-geeks/linked-lists/flatten-multi-level-list)
+6. [LeetCode](leetcode)
   - [Algorithms](leetcode/algorithms)
     * [4Sum](leetcode/algorithms/4sum)
     * [Basic Calculator](leetcode/algorithms/basic-calculator)
@@ -139,17 +155,3 @@ all test cases unless otherwise stated.
     * [Wiggle Subsequence](leetcode/algorithms/wiggle-subsequence)
     * [Wildcard Matching](leetcode/algorithms/wildcard-matching)
     * [Word Break](leetcode/algorithms/word-break)
-5. [Codeforces](codeforces)
-  - [750D New Year and Fireworks](codeforces/new-year-and-fireworks)
-  - [753B Interactive Bulls and Cows (Easy)](codeforces/interactive-bulls-and-cows-easy)
-  - [753C Interactive Bulls and Cows (Hard)](codeforces/interactive-bulls-and-cows-hard)
-  - [754D Fedor and Coupons](codeforces/fedor-and-coupons)
-  - [758D Ability To Convert](codeforces/ability-to-convert)
-  - [758E Broken Tree](codeforces/broken-tree)
-6. [Geeks for Geeks](geeks-for-geeks)
-  - [Dynamic Programming](geeks-for-geeks/dynamic-programming)
-    * [Set 18 - Partition Problem](geeks-for-geeks/dynamic-programming/set-18-partition-problem)
-  - [Mathematics](geeks-for-geeks/mathematics)
-    * [Weighted Random Generator](geeks-for-geeks/mathematics/weighted-random-generator)
-  - [Linked List](geeks-for-geeks/linked-lists)
-    * [Flatten Multi Level Linked List](geeks-for-geeks/linked-lists/flatten-multi-level-list)

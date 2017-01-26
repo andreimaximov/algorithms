@@ -78,6 +78,7 @@ easily understandable algorithms for learning purposes.
   - [754D Fedor and Coupons](codeforces/fedor-and-coupons)
   - [758D Ability To Convert](codeforces/ability-to-convert)
   - [758E Broken Tree](codeforces/broken-tree)
+  - [758F Geometric Progression](codeforces/geometric-progression)
 5. [Geeks for Geeks](geeks-for-geeks)
   - [Dynamic Programming](geeks-for-geeks/dynamic-programming)
     * [Set 18 - Partition Problem](geeks-for-geeks/dynamic-programming/set-18-partition-problem)

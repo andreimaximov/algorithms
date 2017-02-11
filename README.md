@@ -27,6 +27,7 @@ easily understandable algorithms for learning purposes.
     * [Summing Pieces](algorithms/dynamic-programming/summing-pieces)
   - [Graph Theory](algorithms/graph-theory)
     * [BFS: Shortest Reach](algorithms/graph-theory/bfs-shortest-reach)
+    * [Crab Graphs](algorithms/graph-theory/crab-graphs)
     * [Dijkstra: Shortest Reach 2](algorithms/graph-theory/dijkstra-shortest-reach-2)
     * [Floyd: City of Blinding Lights](algorithms/graph-theory/floyd-city-of-blinding-lights)
     * [Jack goes to Rapture](algorithms/graph-theory/jack-goes-to-rapture)

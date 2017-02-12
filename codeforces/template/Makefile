@@ -1,9 +1,9 @@
 CXX := g++
 CXXFLAGS := -std=c++14 -Wall -o out
 
-default: build run
+default: out run
 
-build:
+out: main.cpp
 	$(CXX) $(CXXFLAGS) main.cpp
 
 clean:

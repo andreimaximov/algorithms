@@ -83,6 +83,7 @@ easily understandable algorithms for learning purposes.
 - [758E Broken Tree](codeforces/broken-tree)
 - [758F Geometric Progression](codeforces/geometric-progression)
 - [780D Innokenty and a Football League](codeforces/innokenty-and-a-football-league)
+- [780E Underground Lab](codeforces/underground-lab)
 
 ## Geeks for Geeks
 

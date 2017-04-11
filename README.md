@@ -85,6 +85,7 @@ easily understandable algorithms for learning purposes.
 - [780D Innokenty and a Football League](codeforces/innokenty-and-a-football-league)
 - [780E Underground Lab](codeforces/underground-lab)
 - [792D Paths in a Complete Binary Tree](codeforces/paths-in-complete-binary-tree)
+- [796D - Police Stations](codeforces/police-stations)
 
 ## Geeks for Geeks
 

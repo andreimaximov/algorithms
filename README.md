@@ -108,6 +108,7 @@ easily understandable algorithms for learning purposes.
   * [Binary Tree Maximum Path Sum](leetcode/algorithms/binary-tree-max-path-sum)
   * [Binary Tree Zigzag Level Order Traversal](leetcode/algorithms/binary-tree-zigzag-level-order)
   * [Burst Balloons](leetcode/algorithms/burst-balloons)
+  * [Closest Palindrome](leetcode/algorithms/closest-palindrome)
   * [Container With Most Water](leetcode/algorithms/container-with-most-water)
   * [Contains Duplicate III](leetcode/algorithms/contains-duplicate-iii)
   * [Data Stream as Disjoint Intervals](leetcode/algorithms/data-stream-disjoint-intervals)

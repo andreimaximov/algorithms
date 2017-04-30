@@ -10,6 +10,8 @@ constexpr int MAX_N = 5000;
 
 constexpr int INF = numeric_limits<int>::max();
 
+constexpr bool TUTORIAL = true;
+
 /**
  * The number of buildings.
  */
@@ -21,23 +23,23 @@ int N;
 int H[MAX_N + 1];
 
 /**
- * Each dp[n][i] stores (i) the height of the last building after beautifying
- * H[0...i] in <= n operations or (ii) -1 if it is not not possible to do so.
+ * This array means 2 different things for (1) my original solution and (2)
+ * the tutorial based solution.
+ *
+ * (1) Each DP[n][i] stores (i) the height of the last building after
+ * beautifying H[0...i] in <= n operations or (ii) -1 if it is not possible to
+ * do so.
+ *
+ * (2) Each DP[i][n] stores the height of the lowest last towers after
+ * beautifying  buildings 0...i into at least n towers.
  */
 int DP[MAX_N + 1][MAX_N + 1];
 
-int main() {
-  cin >> N;
-
-  if (N < 2) {
-    cout << 0 << endl;
-    return 0;
-  }
-
-  for (int i = 0; i < N; i++) {
-    cin >> H[i];
-  }
-
+/**
+ * Original O(n^3) implementation - more complex than tutorial solution but
+ * passes in time limit.
+ */
+int solution() {
   // Fill in DP[0][i] for all i. We are effectively checking if the city is
   // already beautiful.
   DP[0][0] = H[0];
@@ -52,7 +54,6 @@ int main() {
 
   // Check if city is already beautiful.
   if (DP[0][N - 1] != -1) {
-    cout << 0 << endl;
     return 0;
   }
 
@@ -119,10 +120,116 @@ int main() {
       DP[n][i] = (DP[n][i] == INF) ? -1 : DP[n][i];
     }
 
+    // Check if we can beautify all N buildsings in n ops.
     if (DP[n][N - 1] != -1) {
-      cout << n << endl;
-      return 0;
+      return n;
     }
+  }
+
+  return N - 1;
+}
+
+/**
+ * Tutorial based O(n^2) implementation - also simpler than my original
+ * solution.
+ */
+int tutorial() {
+  // Handle our base case - DP for just the first building.
+  DP[0][0] = DP[0][1] = H[0];
+  for (int n = 2; n <= N; n++) {
+    DP[0][n] = -1;
+  }
+
+  for (int j = 1; j < N; j++) {
+    // For case n = 1 we can try to just stack this building on top of the
+    // stack of all previous buildings.
+    DP[j][0] = DP[j][1] = DP[j - 1][1] + H[j];
+
+    // S = the smallest sum H[i] + ... + H[j] such that S >= DP[i - 1][n - 1]
+    // at each iteration. This is essentially the height of the smallest
+    // stack of buildings we can have as the last tower for each n. We need to
+    // be very careful that we compute this suffix sum at first and NOT
+    // H[0] + ... H[j]. It appears like the next stage can be modified to
+    // essentially trim H[0] + ... + H[j] from the left but this is messy
+    // since DP[k][n - 1] > H[k + 1] + ... H[j] does NOT rule out the existence
+    // of m > k such that DP[m][n - 1] <= H[m + 1] + ... + H[j]. We can avoid
+    // this messy case by just calculating this initial S from the right.
+    int i = j;
+    int S = H[j];
+    while (i > 0 && S < DP[i - 1][1]) {
+      i--;
+      S += H[i];
+    }
+
+    if (i == 0) {
+      // If we cannot beautify H[0] ... H[j] into at least 2 towers then we
+      // cannot beautify by stacking into 3, 4 ... N - 1 towers either.
+      for (int n = 2; n <= N; n++) {
+        DP[j][n] = -1;
+      }
+    } else {
+      // Use the fact that DP[i][n] <= DP[i][n - 1] if DP[i][n] != -1.
+      for (int n = 2; n <= N; n++) {
+        // Pull up i until we can beautify the previous H[0] ... H[i - 1] into
+        // at least n - 1 towers.
+        while (i < j && DP[i - 1][n - 1] == -1) {
+          S -= H[i];
+          i++;
+        }
+
+        if (DP[i - 1][n - 1] == -1 || S < DP[i - 1][n - 1]) {
+          DP[j][n] = -1;
+        } else {
+          // Decrease the tail S as much as possible while keeping it at least
+          // as tall as the last tower in the previous segment.
+          while (i < j && S - H[i] >= DP[i][n - 1]) {
+            S -= H[i];
+            i++;
+          }
+
+          // Sanity check...
+          assert(DP[i - 1][n - 1] != -1 && DP[i - 1][n - 1] <= S);
+
+          DP[j][n] = S;
+        }
+      }
+    }
+
+    // Finally calculcate DP[i][n] = min(DP[i][n + 1], DP[i][n + 2] ...)
+    for (int n = N - 1; n >= 0; n--) {
+      if (DP[j][n + 1] != -1) {
+        DP[j][n] = min(DP[j][n], DP[j][n + 1]);
+      }
+    }
+  }
+
+  // Search for the largest number of towers we can have, and thus the least
+  // number of ops, to get a beautified city.
+  for (int n = N; n > 0; n--) {
+    if (DP[N - 1][n] != -1) {
+      return N - n;
+    }
+  }
+
+  return N - 1;
+}
+
+int main() {
+  cin >> N;
+
+  if (N < 2) {
+    cout << 0 << endl;
+    return 0;
+  }
+
+  for (int i = 0; i < N; i++) {
+    cin >> H[i];
+  }
+
+  if (TUTORIAL) {
+    cout << tutorial() << endl;
+  } else {
+    cout << solution() << endl;
   }
 
   return 0;

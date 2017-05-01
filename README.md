@@ -77,6 +77,7 @@ easily understandable algorithms for learning purposes.
 
 - [229D Towers](codeforces/towers)
 - [342E Xenia and Tree](codeforces/xenia-and-tree)
+- [637D Running with Obstacles](codeforces/running-with-obstacles)
 - [750D New Year and Fireworks](codeforces/new-year-and-fireworks)
 - [753B Interactive Bulls and Cows (Easy)](codeforces/interactive-bulls-and-cows-easy)
 - [753C Interactive Bulls and Cows (Hard)](codeforces/interactive-bulls-and-cows-hard)

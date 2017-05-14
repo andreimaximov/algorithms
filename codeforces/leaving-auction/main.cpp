@@ -2,7 +2,17 @@
 
 using namespace std;  // NOLINT
 
+#define TUTORIAL 0
+
 constexpr int MAX_N = 200000;
+
+#if !TUTORIAL
+
+/**
+ * ============================================================
+ *                       ORIGINAL SOLUTION
+ * ============================================================
+ */
 
 /**
  * The number of bids.
@@ -14,7 +24,7 @@ int N;
  * pair k is the number of bids person i made on and after the j-th bid. The
  * j's in each S[i] should be stored in increasing order.
  */
-std::vector<pair<int, int>> S[MAX_N];
+vector<pair<int, int>> S[MAX_N];
 
 /**
  * Stores the person of each bid.
@@ -29,7 +39,7 @@ int B[MAX_N];
 /**
  * Stores the people to exclude from the bidding sequence during a query.
  */
-std::vector<int> L;
+vector<int> L;
 
 /**
  * Counts the number of bids people in L made after the i-th bid in
@@ -164,4 +174,116 @@ int main() {
 
   return 0;
 }
+
+#else
+
+/**
+ * ============================================================
+ *                       TUTORIAL SOLUTION
+ * ============================================================
+ */
+
+/**
+ * Stores the maximum bid of each person.
+ */
+map<int, int> M;
+
+/**
+ * Stores the bids of each person in increasing order.
+ */
+vector<int> B[MAX_N];
+
+/**
+ * Stores the people to exclude from the bidding sequence during a query.
+ */
+vector<int> L;
+
+/**
+ * Returns the max bid for person a.
+ */
+int max_bid(int a) {
+  assert(!B[a].empty());
+  return B[a].back();
+}
+
+int main() {
+  int n, a, b, q, k, l;
+
+  // Parse input
+  cin >> n;
+  for (int i = 0; i < n; i++) {
+    cin >> a >> b;
+    a--;
+
+    B[a].push_back(b);
+  }
+
+  // Gather maximum bid for each person.
+  for (int a = 0; a < n; a++) {
+    if (!B[a].empty())
+      M[max_bid(a)] = a;
+  }
+
+  cin >> q;
+
+  for (int i = 0; i < q; i++) {
+    cin >> k;
+    L.clear();
+
+    // Delete each excluded person from the set of max bids.
+    for (int j = 0; j < k; j++) {
+      cin >> l;
+      l--;
+
+      if (B[l].empty())
+        continue;
+
+      L.push_back(l);
+      M.erase(max_bid(l));
+    }
+
+    if (!M.empty()) {
+      int b = M.rbegin()->first;
+      int a = M.rbegin()->second;
+
+      if (M.size() > 1) {
+        // See if we can decrease the bid of person a to be just greater than
+        // the second highest bid.
+        int l = 0;
+        int r = B[a].size() - 1;
+        int c = (++M.rbegin())->first;
+
+        while (l <= r) {
+          int m = l + (r - l) / 2;
+
+          if (B[a][m] < c) {
+            // Bid m of person a is not higher than 2nd highest bid - keep
+            // looking for a larger bid.
+            l = m + 1;
+          } else {
+            // This is a winning bid - but keep looking for a smaller one.
+            b = B[a][m];
+            r = m - 1;
+          }
+        }
+      } else {
+        // Person a is the only one left - use smallest (initial) bid.
+        b = B[a][0];
+      }
+
+      cout << (a + 1) << " " << b << endl;
+    } else {
+      cout << "0 0" << endl;
+    }
+
+    // Restore set of max bids after query.
+    for (int a : L) {
+      M[max_bid(a)] = a;
+    }
+  }
+
+  return 0;
+}
+
+#endif
 

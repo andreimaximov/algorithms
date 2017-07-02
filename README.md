@@ -91,6 +91,7 @@ easily understandable algorithms for learning purposes.
 - [792D Paths in a Complete Binary Tree](codeforces/paths-in-complete-binary-tree)
 - [796D Police Stations](codeforces/police-stations)
 - [796E Exam Cheating](codeforces/exam-cheating)
+- [818D Multicolored Cars](codeforces/multicolored-cars)
 
 ## Geeks for Geeks
 

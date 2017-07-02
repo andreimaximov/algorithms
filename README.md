@@ -92,6 +92,7 @@ easily understandable algorithms for learning purposes.
 - [796D Police Stations](codeforces/police-stations)
 - [796E Exam Cheating](codeforces/exam-cheating)
 - [818D Multicolored Cars](codeforces/multicolored-cars)
+- [819E Mister B and Flight to the Moon](codeforces/mister-b-and-flight-to-the-moon)
 
 ## Geeks for Geeks
 

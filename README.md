@@ -95,6 +95,7 @@ easily understandable algorithms for learning purposes.
 - [818D Multicolored Cars](codeforces/multicolored-cars)
 - [819B Mister B and PR Shifts](codeforces/mister-b-and-pr-shifts)
 - [819E Mister B and Flight to the Moon](codeforces/mister-b-and-flight-to-the-moon)
+- [830B Cards Sorting](codeforces/cards-sorting)
 
 ## Geeks for Geeks
 

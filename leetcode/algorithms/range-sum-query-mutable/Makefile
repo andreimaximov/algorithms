@@ -1,14 +1,13 @@
-JAVA := java
-JAVAC := javac
-JAVACFLAGS := -Xlint:all
+CXX := g++
+CXXFLAGS := -std=c++11 -Wall -o out
 
-default: clean build run
+default: build run
 
 build:
-	$(JAVAC) $(JAVACFLAGS) NumArray.java
+	$(CXX) $(CXXFLAGS) main.cpp
 
 clean:
-	$(RM) NumArray.class
+	$(RM) out
 
 run:
-	$(JAVA) NumArray
+	./out

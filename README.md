@@ -76,6 +76,7 @@ easily understandable algorithms for learning purposes.
 ## CodeForces
 
 - [229D Towers](codeforces/towers)
+- [276C Little Girl and Maximum Sum](codeforces/little-girl-and-maximum-sum)
 - [342E Xenia and Tree](codeforces/xenia-and-tree)
 - [637D Running with Obstacles](codeforces/running-with-obstacles)
 - [749D Leaving Auction](codeforces/leaving-auction)

@@ -100,6 +100,7 @@ easily understandable algorithms for learning purposes.
 - [827C DNA Evolution](codeforces/dna-evolution)
 - [830B Cards Sorting](codeforces/cards-sorting)
 - [833B The Bakery](codeforces/the-bakery)
+- [835E The Penguin's Game](codeforces/the-penguins-game)
 
 ## Geeks for Geeks
 

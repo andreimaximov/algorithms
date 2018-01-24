@@ -9,7 +9,7 @@ easily understandable algorithms for learning purposes.
 
 ## HackerRank
 
-- [Algorithms](algorithms)
+- [Algorithms](hacker-rank/algorithms)
   - [Bit Manipulation](hacker-rank/algorithms/bit-manipulation)
     * [AND Product](hacker-rank/algorithms/bit-manipulation/and-product)
     * [Cipher](hacker-rank/algorithms/bit-manipulation/cipher)
@@ -55,7 +55,9 @@ easily understandable algorithms for learning purposes.
     * [Pangrams](hacker-rank/algorithms/strings/pangrams)
     * [Sherlock and Anagrams](hacker-rank/algorithms/strings/sherlock-and-anagrams)
     * [Two Strings](hacker-rank/algorithms/strings/two-strings)
-- [Data Structures](data-structures)
+- [Artificial Intelligence](hacker-rank/artificial-intelligence)
+  - [Tic Tac Toe](hacker-rank/artificial-intelligence/alpha-beta-pruning/tic-tac-toe)
+- [Data Structures](hacker-rank/data-structures)
   - [Disjoint Set](hacker-rank/data-structures/disjoint-set)
     * [Merging Communities](hacker-rank/data-structures/disjoint-set/merging-communities)
   - [Heap](hacker-rank/data-structures/heap)
@@ -66,7 +68,7 @@ easily understandable algorithms for learning purposes.
     * [Self Balancing Tree](hacker-rank/data-structures/tree/self-balancing-tree)
   - [Trie](hacker-rank/data-structures/trie)
     * [No Prefix Set](hacker-rank/data-structures/trie/no-prefix-set)
-- [Mathematics](mathematics)
+- [Mathematics](hacker-rank/mathematics)
   - [Combinatorics](hacker-rank/mathematics/combinatorics)
     * [Choose and Calculate](hacker-rank/mathematics/combinatorics/choose-and-calculate)
     * [Journey to Mars](hacker-rank/mathematics/combinatorics/journey-to-mars)

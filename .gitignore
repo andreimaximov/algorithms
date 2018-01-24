@@ -1,5 +1,5 @@
 out
-*.class
 __pycache__
+.vscode
+*.class
 *.swp
-
